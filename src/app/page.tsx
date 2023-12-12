@@ -1,95 +1,125 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import '../../styles/App.css'
+import ResponsiveAppBar from '../../components/navbar'
+import { Box, Button, Stack, Text, background } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
+import { Gochi_Hand } from 'next/font/google'
+import { Oswald } from 'next/font/google'
+ 
+const oswald = Oswald({
+  weight: '400',
+  subsets: ['latin'],
+})
 
-export default function Home() {
+const gochi = Gochi_Hand({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+export default function Page() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <ChakraProvider>
+      <main>
+        <ResponsiveAppBar />
+        <Box sx={{ paddingY:'2rem', display:'flex', flexDir:'column'}} className='light'>
+          <Text
+            noOfLines={2}
+            bgGradient='linear(to-l, #7A59CA, #E6175B)'
+            bgClip='text'
+            className={gochi.className}
+            fontSize='5xl'
+            align={'center'}
+            sx={{ marginBottom: "-2rem", marginTop:"3rem"}}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+          Gemeinsam muzisieren,
+          </Text>
+          <Text
+            noOfLines={2}
+            bgGradient='linear(to-l, #7A59CA, #E6175B)'
+            bgClip='text'
+            className={gochi.className}
+            fontSize='5xl'
+            align={'center'}
+          >
+          gemeinsam wachsen
+          </Text>
+          <Text
+            className={oswald.className}
+            fontSize='2xl'
+            align={'center'}
+            sx={{ fontcolor:"black"}}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          >
+          Entdecke, wie Musik die Entwicklung deines Kindes fördern kann.
+          </Text>
+          <Stack direction='row' spacing={4} display={'flex'} justifyContent={'center'} marginY={'1rem'}>
+            <Button
+              bgGradient='linear(to-l, #7A59CA, #E6175B)'
+              bgClip='text'
+              variant='outline'
+              outlineColor='#7A59CA'
+              outlineOffset={"-2px"}
+              border={'3px'}
+              borderRadius={"1.5rem"}
+              height={"3rem"}>
+              Mehr Erfahren
+            </Button>
+            <Button
+              bgGradient='linear(to-l, #7A59CA, #E6175B)'
+              bgClip='background'
+              variant='solid'
+              borderRadius={"1.5rem"}
+              height={"3rem"}>
+              Jetzt Anmelden
+            </Button>
+            </Stack>
+        </Box>
+        <Box sx={{paddingY:'2rem', display:'flex', flexDir:'row', width:'%100'}} className='dark'>
+          <Box sx={{mx:'4rem', paddingY:'2rem', display:'flex', flexDir:'column', flex:'0.5'}} className='dark'>
+            <Text
+              noOfLines={2}
+              bgGradient='linear(to-l, #7A59CA, #E6175B)'
+              bgClip='text'
+              className={gochi.className}
+              fontSize='5xl'
+              textAlign={'left'}
+              sx={{marginTop:"3rem"}}
+            >
+            Die Workshops
+            </Text>
+            <Text
+              className={oswald.className}
+              fontSize='2xl'
+              align={'left'}
+              sx={{ fontcolor:"black"}}
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+            >
+            Musikolibri lädt dich ein, deine kleine Maus bei ihren ersten Schritten in die Welt der Klänge, Rhythmen, Harmonien und Melodien zu begleiten und gemeinsam, Hand in Hand, einen wunderbaren musikalischen Weg zu entdecken.
+            </Text>
+          </Box>
+          <Box sx={{paddingY:'2rem', display:'flex', flexDir:'column', flex:'0.5'}} className='dark'>
+            <Text
+              noOfLines={2}
+              bgGradient='linear(to-l, #7A59CA, #E6175B)'
+              bgClip='text'
+              className={gochi.className}
+              fontSize='5xl'
+              align={'center'}
+              sx={{ marginBottom: "-2rem", marginTop:"3rem"}}
+            >
+            Die Workshops
+            </Text>
+            <Text
+              className={oswald.className}
+              fontSize='2xl'
+              align={'center'}
+              sx={{ fontcolor:"black"}}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            >
+            Musikolibri lädt dich ein, deine kleine Maus bei ihren ersten Schritten in die Welt der Klänge, Rhythmen, Harmonien und Melodien zu begleiten und gemeinsam, Hand in Hand, einen wunderbaren musikalischen Weg zu entdecken.
+            </Text>
+          </Box>
+        </Box>
+      </main>
+    </ChakraProvider>
   )
 }

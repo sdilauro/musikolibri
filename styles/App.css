@@ -1,0 +1,50 @@
+html, body {
+  margin:0;
+  background-color:#f4e4dc;
+}
+
+.navbar {
+  background-color:#f4e4dc;
+  min-height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+
+main {
+  max-width: 1440px;
+  width: 80%;
+  margin: auto;
+  min-height: 100vh;
+}
+
+.light {
+  background-color:#f4e4dc;
+  min-height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+
+.dark {
+  background-color:#F4D9D1;
+  min-height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
