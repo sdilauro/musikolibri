@@ -76,7 +76,7 @@ export default function Page() {
           </Box>
         </Box>
         <Box sx={{ w:'100%' }} className='dark'>
-          <Box sx={{paddingY:'2rem', display:'flex', flexDir:'row', maxWidth:'1440px', width:'80%', alignItems:'self-start' }} className='dark'>
+          <Box sx={{paddingY:'2rem', display:'flex', flexDir:'row', width:'75%', alignItems:'self-start' }} className='dark'>
             <Box sx={{mx:'3rem', display:'flex', flexDir:'column', flex:'0.5', alignItems:'self-start'}} className='dark'>
               <Text
                 noOfLines={2}
