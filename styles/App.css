@@ -4,7 +4,7 @@ html, body {
 }
 
 .navbar {
-  background-color:#f4e4dc;
+  background-color:#f5eee6;
   min-height: 40px;
   display: flex;
   flex-direction: row;
@@ -17,14 +17,12 @@ html, body {
 }
 
 main {
-  max-width: 1440px;
-  width: 80%;
   margin: auto;
   min-height: 100vh;
 }
 
 .light {
-  background-color:#f4e4dc;
+  background-color:#f5eee6;
   min-height: 40px;
   display: flex;
   flex-direction: row;
@@ -37,7 +35,7 @@ main {
 }
 
 .dark {
-  background-color:#F4D9D1;
+  background-color:#f4e4dc;
   min-height: 40px;
   display: flex;
   flex-direction: row;
