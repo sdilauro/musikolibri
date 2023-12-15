@@ -46,3 +46,8 @@ main {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
 }
+
+.kursClass {
+  background-color:#f4e4dc;
+  margin:2rem
+}
