@@ -1,9 +1,8 @@
 'use client'
 
-import * as React from 'react';
-import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, Flex, Text } from '@chakra-ui/react';
+import { Gochi_Hand, Oswald } from 'next/font/google';
 import './../../styles/App.css';
-import { Oswald, Gochi_Hand} from 'next/font/google'
  
 const oswald = Oswald({
     weight: '400',
@@ -15,7 +14,7 @@ const oswald = Oswald({
     subsets: ['latin'],
   })
    
-type GruppeCardProps = { name: string, schedule: string, days:string, color:string }
+type GruppeCardProps = { name: string, schedule: string, days:string, color:string, id:number }
 
 
 const GruppeRow = (props:GruppeCardProps) => {
@@ -29,7 +28,8 @@ const GruppeRow = (props:GruppeCardProps) => {
             borderRadius={'32px'} 
             padding='2rem' 
             margin='2rem'
-            maxW='%60'>
+            maxW='%60'
+            key={props.id}>
             <CardBody>
                 <Flex flexDir='column' flex='1' alignItems='top'>
                     <Text 

@@ -15,13 +15,13 @@ const oswald = Oswald({
     subsets: ['latin'],
   })
    
-type GruppeCardProps = { name: string, price: number, startOn:string, finishOn:string, details:Array<string>, imageSource:string }
+type GruppeCardProps = { name: string, price: number, startOn:string, finishOn:string, details:Array<string>, imageSource:string, id:number}
 
 
 const GruppeCard = (props:GruppeCardProps) => {
     
     return (
-        <Card maxW='md' backgroundColor={'#f4e4dc'} borderRadius={'32px'} padding='2rem' margin='2rem' minW={'400px'}>
+        <Card maxW='md' backgroundColor={'#f4e4dc'} borderRadius={'32px'} padding='2rem' margin='2rem' minW={'400px'} key={props.id}>
             <CardBody>
                 <Flex flex='1' gap='0' alignItems='center' flexWrap='wrap'>
                     <Box>
@@ -48,7 +48,7 @@ const GruppeCard = (props:GruppeCardProps) => {
                     </Button>
                 </Box>
                 {props.details.map((detail:string, index:number)=>(
-                    <Text className={oswald.className} fontSize={'24px'}>• {detail}</Text>
+                    <Text className={oswald.className} fontSize={'24px'} key={index}>• {detail}</Text>
                 ))}
             </CardBody>
         </Card>

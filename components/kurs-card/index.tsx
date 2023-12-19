@@ -1,9 +1,8 @@
 'use client'
 
-import * as React from 'react';
-import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Stack, Text } from '@chakra-ui/react';
+import { Avatar, Box, Button, Card, CardBody, Flex, Text } from '@chakra-ui/react';
+import { Gochi_Hand, Oswald } from 'next/font/google';
 import './../../styles/App.css';
-import { Oswald, Gochi_Hand} from 'next/font/google'
  
 const oswald = Oswald({
     weight: '400',
@@ -15,13 +14,13 @@ const oswald = Oswald({
     subsets: ['latin'],
   })
    
-type KursCardProps = { name: string, price: number, startOn:string, finishOn:string, details:Array<string>, imageSource:string }
+type KursCardProps = { name: string, price: number, startOn:string, finishOn:string, details:Array<string>, imageSource:string, id:number }
 
 
 const KursCard = (props:KursCardProps) => {
     
     return (
-        <Card maxW='md' backgroundColor={'#f4e4dc'} borderRadius={'32px'} padding='2rem' margin='2rem' minW={'400px'}>
+        <Card maxW='md' backgroundColor={'#f4e4dc'} borderRadius={'32px'} padding='2rem' margin='2rem' minW={'400px'} key={props.id}>
             <CardBody>
                 <Flex flex='1' gap='0' alignItems='center' flexWrap='wrap'>
                     <Box>
@@ -48,7 +47,7 @@ const KursCard = (props:KursCardProps) => {
                     </Button>
                 </Box>
                 {props.details.map((detail:string, index:number)=>(
-                    <Text className={oswald.className} fontSize={'24px'}>• {detail}</Text>
+                    <Text className={oswald.className} fontSize={'24px'} key={index}>• {detail}</Text>
                 ))}
             </CardBody>
         </Card>
