@@ -15,10 +15,10 @@ const oswald = Oswald({
     subsets: ['latin'],
   })
    
-type KursCardProps = { name: string, price: number, startOn:string, finishOn:string, details:Array<string>, imageSource:string }
+type GruppeCardProps = { name: string, price: number, startOn:string, finishOn:string, details:Array<string>, imageSource:string }
 
 
-const KursCard = (props:KursCardProps) => {
+const GruppeCard = (props:GruppeCardProps) => {
     
     return (
         <Card maxW='md' backgroundColor={'#f4e4dc'} borderRadius={'32px'} padding='2rem' margin='2rem' minW={'400px'}>
@@ -54,4 +54,4 @@ const KursCard = (props:KursCardProps) => {
         </Card>
     )
 }
-export default KursCard;
+export default GruppeCard;

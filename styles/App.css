@@ -3,6 +3,7 @@ html, body {
   background-color:#f4e4dc;
 }
 
+
 .navbar {
   background-color:#f5eee6;
   min-height: 40px;
@@ -50,4 +51,10 @@ main {
 .kursClass {
   background-color:#f4e4dc;
   margin:2rem
+}
+
+.content-size {
+  max-width: 1440px;
+  width: 80%;
+  margin: auto;
 }
