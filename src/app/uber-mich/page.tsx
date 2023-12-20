@@ -1,12 +1,10 @@
 "use client";
 
-import { ChakraProvider } from "@chakra-ui/react";
-import ResponsiveAppBar from "../../../components/navbar";
-import DatedParagraph from "../../../components/dated_paragraph";
-import { Box, Text, ListItem, ListIcon, List, Image, Divider, defineStyle, defineStyleConfig, Flex, Center, Spacer } from '@chakra-ui/react'
+import { Box, ChakraProvider, Image, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Gochi_Hand, Oswald } from 'next/font/google';
 import { IoMdMusicalNote } from "react-icons/io";
-import { Gochi_Hand } from 'next/font/google'
-import { Oswald } from 'next/font/google'
+import DatedParagraph from "../../../components/dated_paragraph";
+import ResponsiveAppBar from "../../../components/navbar";
 
 const oswald = Oswald({
     weight: '400',
@@ -17,16 +15,6 @@ const gochi = Gochi_Hand({
     weight: '400',
     subsets: ['latin'],
 })
-
-const xl = defineStyle({
-    border: "10px solid",
-    borderRadius: 'lg',
-})
-
-export const dividerTheme = defineStyleConfig({
-    sizes: { xl },
-})
-
 
 export default function UberMichPage() {
     return (
