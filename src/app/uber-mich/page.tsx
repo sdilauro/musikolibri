@@ -74,7 +74,7 @@ export default function UberMichPage() {
                     </Box>
                     <Box sx={{ mx: '3rem', display: 'flex', flexDir: 'column', flex: '0.5' }} className='dark'>
                         <Image
-                            boxSize='25rem'
+                            width='25rem'
                             src='/assets/anabela.jpg'
                             alt='Anabela'
                             fallbackSrc='https://via.placeholder.com/512'
