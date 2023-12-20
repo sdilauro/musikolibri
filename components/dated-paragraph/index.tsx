@@ -14,7 +14,7 @@ const oswald = Oswald({
     subsets: ['latin'],
   })
    
-type DatedParagraphProps = { date: string, paragraph: string, id: number, im_src: string }
+export type DatedParagraphProps = { date: string, paragraph: string, im_src: string }
 
 
 const DatedParagraph = (props:DatedParagraphProps) => {
