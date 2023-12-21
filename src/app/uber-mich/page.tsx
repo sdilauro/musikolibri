@@ -16,13 +16,15 @@ const gochi = Gochi_Hand({
     subsets: ['latin'],
 })
 
-
-const data = [
-    {date: '1990s', paragraph: 'Schon als Kind hatte ich eine besondere Beziehung zur Musik. Ich erinnere mich zum Beispiel noch daran, wie ich als kleines Kind auf einem Spielzeugklavier gespielt habe, das eigentlich ein Geschenk für meinen älteren Bruder war. Ich komponierte bereits als junge Mädchen meine eigene Musik und hatte schon immer eine Neigung zum Musizieren und zum Erlernen von Musikinstrumenten.', id: 0, im_src: '/assets/anabela_chiquita.jpg'},
-    {date: '2000s', paragraph: 'Aus familiären Gründen konnte ich erst mit 17 Jahren ein formales Musikstudium beginnen. Für einen relativ späten Start (viele professionelle Musiker beginnen ihr Studium im Kindesalter (!)) gelang es mir jedoch, meine Karriere sehr schnell voranzutreiben.', id: 1, im_src: '/assets/anabela_chiquita.jpg'},
-    {date: '2010s', paragraph: 'In meiner Heimatstadt Buenos Aires studierte ich von 2011 bis 2017 Musik an der Universidad Nacional de las Artes mit dem Schwerpunkt Klavier. Während dieser Zeit habe ich auch viele Konzerte in verschiedenen Konzertsälen im ganzen Land gegeben. Am Ende meines Studiums habe ich mich weitergebildet. Besonders hervorzuheben ist ein einjähriger Aufenthalt in Barcelona, um bei Maestro Josep Culom zu studieren.', id: 2, im_src: '/assets/anabela_chiquita.jpg'},
-    {date: '2020s', paragraph: 'Im Jahr 2022 wurde meine Tochter geboren und ich entdeckte die wunderbare Welt der Mutterschaft. Zu dieser Zeit wurde mir klar, dass ich Musikunterricht für Babys und Kleinkinder wirklich beruflich machen wollte.', id: 3, im_src: '/assets/anabela_hija.jpg'}
-]
+let data: {
+    date: string;
+    paragraph: string;
+    id: number;
+    im_src: string;
+    im_alt: string;
+}[]
+const contents = require('public/assets/timeline.json');
+data = contents.timeline
 
 export default function UberMichPage() {
     return (
@@ -113,7 +115,7 @@ export default function UberMichPage() {
                     >
                         Was mich mein ganzes Leben lang am meisten geprägt hat, ist das Unterrichten. Seit meinem 17. Lebensjahr unterrichte ich Klavier und genieße es jeden Tag ein bisschen mehr. Ich habe Schüler aller Altersstufen unterrichtet und war immer fasziniert von den Gemeinsamkeiten und Unterschieden zwischen meinen jüngeren und älteren Schülern.
                     </Text>
-                 </Box>
+                </Box>
             </Box>
             <Box sx={{ w: '100%' }} className='dark'>
                 <Box sx={{ paddingY: '2rem', paddingBottom: '6rem', display: 'flex', flexDir: 'column', maxWidth: '1440px', width: '80%' }} className='dark'>
@@ -127,9 +129,9 @@ export default function UberMichPage() {
                     >
                         Mein musikalischer Weg
                     </Text>
-                    {data.map((item) => 
-                    <DatedParagraph date={item.date} paragraph={item.paragraph} im_src={item.im_src} key={item.id} />)}
-                 </Box>
+                    {data.map((item) =>
+                        <DatedParagraph date={item.date} paragraph={item.paragraph} im_src={item.im_src} im_alt={item.im_alt} key={item.id} />)}
+                </Box>
             </Box>
         </ChakraProvider>
     )

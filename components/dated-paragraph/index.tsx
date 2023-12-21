@@ -14,7 +14,7 @@ const oswald = Oswald({
     subsets: ['latin'],
   })
    
-export type DatedParagraphProps = { date: string, paragraph: string, im_src: string }
+export type DatedParagraphProps = { date: string, paragraph: string, im_src: string, im_alt: string }
 
 
 const DatedParagraph = (props:DatedParagraphProps) => {
@@ -37,7 +37,7 @@ const DatedParagraph = (props:DatedParagraphProps) => {
             <Image
                             width='25rem'
                             src={props.im_src}
-                            alt='Anabela'
+                            alt={props.im_alt}
                             fallbackSrc='https://via.placeholder.com/512'
                             position={'relative'}
                             objectFit='contain'
