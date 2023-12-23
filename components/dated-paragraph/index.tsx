@@ -29,22 +29,21 @@ const DatedParagraph = (props:DatedParagraphProps) => {
                 paddingX= '0.5rem'
                 >
                     {props.date}
-                    </Text>
+                </Text>
                 <Divider orientation='vertical' flex={1} borderColor={'#E6175B'} marginBottom={'1rem'} />
             </Flex>
             <Flex flexDir='column' alignItems='center' marginRight={'3rem'} minWidth={'8rem'}>
-            <Text fontSize='1.25rem' marginBottom={'1rem'}>{props.paragraph}</Text>
-            <Image
-                            width='25rem'
-                            src={props.im_src}
-                            alt={props.im_alt}
-                            fallbackSrc='https://via.placeholder.com/512'
-                            position={'relative'}
-                            objectFit='contain'
-                            marginBottom={'3rem'}
-                            borderRadius={'35px'}
-                        />
-                        </Flex>
+                <Text fontSize='1.25rem' marginBottom={'1rem'}>{props.paragraph}</Text>
+                <Image
+                    width='25rem'
+                    src={props.im_src}
+                    alt={props.im_alt}
+                    fallbackSrc='https://via.placeholder.com/512'
+                    position={'relative'}
+                    objectFit='contain'
+                    marginBottom={'3rem'}
+                    borderRadius={'35px'}/>
+            </Flex>
         </Flex>
     )
 }
