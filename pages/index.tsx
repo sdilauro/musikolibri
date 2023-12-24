@@ -1,5 +1,4 @@
-import '../../styles/App.css'
-import ResponsiveAppBar from '../../components/navbar'
+import ResponsiveAppBar from '../components/navbar'
 import { Box, Button, Stack, Text, Image } from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Gochi_Hand } from 'next/font/google'
@@ -15,10 +14,9 @@ const gochi = Gochi_Hand({
   subsets: ['latin'],
 })
 
-export default function Page() {
+export default function Home() {
   return (
-    <ChakraProvider>
-        <ResponsiveAppBar />
+      <>
         <Box sx={{ w:'100%'}} className='light'>
           <Box className='content-size'>
             <Box sx={{ paddingY:'2rem', paddingBottom:'9rem', display:'flex', flexDir:'column', width:'100%' }} className='light'>
@@ -111,6 +109,6 @@ export default function Page() {
             </Box>
           </Box>
         </Box>
-    </ChakraProvider>
+      </>
   )
 }

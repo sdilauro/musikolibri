@@ -1,11 +1,10 @@
-import { Box, ChakraProvider } from "@chakra-ui/react";
-import ResponsiveAppBar from "../../../components/navbar";
-import KursCard from "../../../components/kurs-card";
+import { Box } from "@chakra-ui/react";
+import KursCard from "../components/kurs-card";
 
 export default function TermineUndPreisePage() {
     return (
-        <ChakraProvider>
-            <ResponsiveAppBar/>
+        <>
+
             <Box className="light" alignItems={'self-start'}>
                 <KursCard
                     name='Frühling'
@@ -46,6 +45,6 @@ export default function TermineUndPreisePage() {
                     id={4}
                 />
             </Box>
-        </ChakraProvider>
+        </>
   )
 }

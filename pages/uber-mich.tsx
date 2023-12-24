@@ -1,10 +1,9 @@
 "use client";
 
-import { Box, ChakraProvider, Image, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Box, Image, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { Gochi_Hand, Oswald } from 'next/font/google';
 import { IoMdMusicalNote } from "react-icons/io";
-import DatedParagraph from "../../../components/dated-paragraph";
-import ResponsiveAppBar from "../../../components/navbar";
+import DatedParagraph from "../components/dated-paragraph";
 
 const oswald = Oswald({
     weight: '400',
@@ -28,8 +27,7 @@ data = contents.timeline
 
 export default function UberMichPage() {
     return (
-        <ChakraProvider>
-            <ResponsiveAppBar />
+        <>
             <Box sx={{ w: '100%' }} className='light'>
                 <Box sx={{ paddingY: '2rem', paddingBottom: '6rem', display: 'flex', flexDir: 'column', maxWidth: '1440px', width: '80%' }} className='light'>
                     <Text
@@ -133,6 +131,6 @@ export default function UberMichPage() {
                         <DatedParagraph date={item.date} paragraph={item.paragraph} im_src={item.im_src} im_alt={item.im_alt} key={item.id} />)}
                 </Box>
             </Box>
-        </ChakraProvider>
+        </>
     )
 }
