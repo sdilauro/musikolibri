@@ -1,20 +1,22 @@
 'use client'
+import axios from 'axios';
 import { useState } from 'react';
-import { sendEmail } from '../../utils/send-mail';
 
 const HomePage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [kurse, setKurse] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // Tu lógica de manejo del formulario aquí
-
-    // Envía el correo de confirmación
-    await sendEmail(email, name, kurse);
+    
+  const handleSubmit = async () => {
+    try {
+      await axios.post('/api/sendEmail', { email, name, kurse });
+      alert('Correo electrónico enviado con éxito');
+    } catch (error) {
+      console.error('Error al enviar el correo electrónico:', error);
+      alert('Error al enviar el correo electrónico');
+    }
   };
+  
 
   return (
     <div>
