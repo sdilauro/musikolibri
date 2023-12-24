@@ -1,8 +1,7 @@
 'use client'
 
 import * as React from 'react';
-import { Button, Flex, Stack, Image } from '@chakra-ui/react';
-import './../../styles/App.css';
+import { Button, Flex, Image } from '@chakra-ui/react';
 import Link from 'next/link'
 import { Gochi_Hand, Oswald } from 'next/font/google'
  
@@ -22,7 +21,8 @@ type link = { name: string, route: string }
 const pages: Array<link> = [
     { name: 'Über mich', route: '/uber-mich' },
     { name: 'Räumlichkeiten', route: '/raumlichkeiten' },
-    { name: 'Termine & Preise', route: '/termine-und-preise' }
+    { name: 'Termine & Preise', route: '/termine-und-preise' },
+    { name: 'Kontakt', route: '/form' }
 ]
 
 function ResponsiveAppBar() {

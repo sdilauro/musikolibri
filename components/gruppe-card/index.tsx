@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import { Avatar, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, IconButton, Stack, Text } from '@chakra-ui/react';
-import './../../styles/App.css';
 import { Oswald, Gochi_Hand} from 'next/font/google'
  
 const oswald = Oswald({

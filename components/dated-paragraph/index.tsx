@@ -2,7 +2,6 @@
 
 import { Divider, Flex, Text, Image } from '@chakra-ui/react';
 import { Gochi_Hand, Oswald } from 'next/font/google';
-import './../../styles/App.css';
  
 const oswald = Oswald({
     weight: '400',

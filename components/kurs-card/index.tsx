@@ -2,7 +2,6 @@
 
 import { Avatar, Box, Button, Card, CardBody, Flex, Text } from '@chakra-ui/react';
 import { Gochi_Hand, Oswald } from 'next/font/google';
-import './../../styles/App.css';
  
 const oswald = Oswald({
     weight: '400',
