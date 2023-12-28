@@ -1,0 +1,87 @@
+{
+    "cards": [
+        {
+            "name": "Frühling",
+            "price": 80,
+            "startOn": "Februar",
+            "finishOn": "März", 
+            "details": ["Gruppe I & II","8 Termine à 40 Min","Inkl. Texte","Letzte Stunde Osterspezial"],
+            "imageSource":"/assets/fruhling.png"
+        },
+        {
+            "name": "Sommer",
+            "price": 110,
+            "startOn": "April",
+            "finishOn": "Juni", 
+            "details": ["Gruppe I & II","11 Termine à 40 Min","Inkl. Texte"],
+            "imageSource":"/assets/sommer.png"
+        },
+        {
+            "name": "Herbost",
+            "price": 80,
+            "startOn": "August",
+            "finishOn": "Oktober", 
+            "details": ["Gruppe I & II","8 Termine à 40 Min","Inkl. Texte"],
+            "imageSource":"/assets/herbst.png"
+        },
+        {
+            "name": "Winter",
+            "price": 70,
+            "startOn": "November",
+            "finishOn": "Dezember", 
+            "details": ["Gruppe I & II","7 Termine à 40 Min","Inkl. Texte"],
+            "imageSource":"/assets/winter.png"
+        }
+        
+    ],
+    "rows":[
+        {
+            "name": "Frühling - Gruppe I",
+            "schedule": "15:30 - 16:10",
+            "days": "01.02., 08.02., 15.02., 22.02., 29.02., 07.03., 14.03., 21.03.",
+            "color":"dark"
+        },
+        {
+            "name": "Frühling - Gruppe II",
+            "schedule": "16:15 - 16:55",
+            "days": "01.02., 08.02., 15.02., 22.02., 29.02., 07.03., 14.03., 21.03.",
+            "color":"dark"
+        },
+        {
+            "name": "Sommer - Gruppe II",
+            "schedule": "15:30 - 16:10",
+            "days": "11.04., 18.04., 25.04., 02.05., 16.05., 23.05., 06.06., 13.06., 20.06., 27.06., 04.07.",
+            "color":"light"
+        },
+        {
+            "name": "Sommer - Gruppe II",
+            "schedule": "16:15 - 16:55",
+            "days": "11.04., 18.04., 25.04., 02.05., 16.05., 23.05., 06.06., 13.06., 20.06., 27.06., 04.07.",
+            "color":"light"
+        },
+        {
+            "name": "Herbst - Gruppe II",
+            "schedule": "15:30 - 16:10",
+            "days": "22.08., 29.08., 05.09., 12.09., 19.09., 26.09., 10.10., 31.10.",
+            "color":"dark"
+        },
+        {
+            "name": "Herbst - Gruppe II",
+            "schedule": "16:15 - 16:55",
+            "days": "22.08., 29.08., 05.09., 12.09., 19.09., 26.09., 10.10., 31.10.",
+            "color":"dark"
+        },
+        {
+            "name": "Winter - Gruppe II",
+            "schedule": "15:30 - 16:10",
+            "days": "07.11., 14.11., 21.11., 28.11., 05.12., 12.12., 19.12.",
+            "color":"light"
+        },
+        {
+            "name": "Winter - Gruppe II",
+            "schedule": "16:15 - 16:55",
+            "days": "07.11., 14.11., 21.11., 28.11., 05.12., 12.12., 19.12.",
+            "color":"light"
+        }
+    ]
+}

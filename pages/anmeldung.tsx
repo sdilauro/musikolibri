@@ -1,11 +1,31 @@
 import GruppeRow from "../components/gruppe-row";
 
 export default function AnmeldungPage() {
+
+    type kurses_file = {
+        kurses: Array<kurse>,
+        rows: Array<row>
+    }
+
+    type kurse = { name: string, schedule: string, days:string, color:string, id:number }
+
+    type row = { name: string, schedule: string, days:string, color:string, id:number }
+
+    const contents:kurses_file = require('public/assets/kurses.json');
+    const data = contents.rows
+
     return (
         <>
-            <GruppeRow
-                name='Frühling - Gruppe I' schedule={'15:30 - 16:30'} days={"01.02., 08.02., 15.02., 22.02., 29.02., 07.03., 14.03., 21.03."} color={"dark"} id={1}
-            />
+            {data.map((item: row, index: number) => (
+                <GruppeRow
+                    key={index}
+                    name={item.name}
+                    schedule={item.schedule}
+                    days={item.days}
+                    color={item.color}
+                    />
+                ))
+            } 
         </>
   )
 }

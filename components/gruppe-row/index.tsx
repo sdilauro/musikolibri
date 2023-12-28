@@ -13,7 +13,7 @@ const oswald = Oswald({
     subsets: ['latin'],
   })
    
-type GruppeCardProps = { name: string, schedule: string, days:string, color:string, id:number }
+type GruppeCardProps = { name: string, schedule: string, days:string, color:string }
 
 
 const GruppeRow = (props:GruppeCardProps) => {
@@ -27,8 +27,7 @@ const GruppeRow = (props:GruppeCardProps) => {
             borderRadius={'32px'} 
             padding='2rem' 
             margin='2rem'
-            maxW='%60'
-            key={props.id}>
+            maxW='%60'>
             <CardBody>
                 <Flex flexDir='column' flex='1' alignItems='top'>
                     <Text 

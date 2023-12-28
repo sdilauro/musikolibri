@@ -1,14 +1,10 @@
 "use client";
 
 import { Box, Image, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
-import { Gochi_Hand, Oswald } from 'next/font/google';
+import { Gochi_Hand } from 'next/font/google';
 import { IoMdMusicalNote } from "react-icons/io";
 import DatedParagraph from "../components/dated-paragraph";
 
-const oswald = Oswald({
-    weight: '400',
-    subsets: ['latin'],
-})
 
 const gochi = Gochi_Hand({
     weight: '400',
