@@ -1,6 +1,6 @@
 import { Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, useToast, Text, Select } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { sendContactForm } from '../lib/api';
+import { sendContactForm, sendNotice } from '../lib/api';
 
 const initValues = { email:'', name:'', kurse:''}
 const initState = { isLoading: false, error: '', values: initValues }
@@ -124,6 +124,22 @@ export default function FormPage() {
       setState(initState);
       toast({
         title: "Message sent.",
+        status: "success",
+        duration: 2000,
+        position: "top",
+      });
+    } catch (error:any) {
+      setState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: error.message,
+      }));
+    }
+    try {
+      await sendNotice(values);
+      setState(initState);
+      toast({
+        title: "Message received.",
         status: "success",
         duration: 2000,
         position: "top",
