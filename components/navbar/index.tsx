@@ -41,7 +41,7 @@ function ResponsiveAppBar() {
                     </Link>
                     {pages.map((item, index) => <Link className={oswald.className} style={{ textDecoration: 'none' }} key={index} href={item.route}>{item.name}</Link>)}
                     <Link style={{ textDecoration: 'none' }} href={'/anmeldung'}>
-                        <Button colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} fontSize={'24px'} className={gochi.className} fontWeight={400}>Anmeldung</Button>
+                        <Button paddingX='2rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} fontSize={'24px'} className={gochi.className} fontWeight={400}>Anmeldung</Button>
                     </Link>
                 {/* </Stack> */}
                 

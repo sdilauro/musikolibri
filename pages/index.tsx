@@ -14,7 +14,7 @@ const gochi = Gochi_Hand({
   subsets: ['latin'],
 })
 
-export default function Home() {
+export default function HomePage() {
   return (
       <>
         <Box sx={{ w:'100%'}} className='light'>

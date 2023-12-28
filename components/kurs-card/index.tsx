@@ -1,6 +1,6 @@
 'use client'
 
-import { Avatar, Box, Button, Card, CardBody, Flex, Text } from '@chakra-ui/react';
+import { Avatar, Box, Button, Card, CardBody, Flex, Link, Text } from '@chakra-ui/react';
 import { Gochi_Hand, Oswald } from 'next/font/google';
  
 const oswald = Oswald({
@@ -13,7 +13,7 @@ const oswald = Oswald({
     subsets: ['latin'],
   })
    
-type KursCardProps = { name: string, price: number, startOn:string, finishOn:string, details:Array<string>, imageSource:string, id:number }
+type KursCardProps = { name: string, price: number, startOn:string, finishOn:string, details:Array<string>, imageSource:string, id:string }
 
 
 const KursCard = (props:KursCardProps) => {
@@ -41,9 +41,11 @@ const KursCard = (props:KursCardProps) => {
                     </Box>
                 </Flex>
                 <Box display={'flex'} flexDir={'column'} alignItems={'center'} marginY={'1rem'}>
-                    <Button paddingX='5rem' colorScheme={'purple'}variant='solid' borderRadius={'1.5rem'} h={'3rem'}>
-                        Jetzt Anmelden
-                    </Button>
+                    <Link href={`/anmeldung#${props.id}`}>
+                        <Button paddingX='5rem' colorScheme={'purple'}variant='solid' borderRadius={'1.5rem'} h={'3rem'}>
+                            Jetzt Anmelden
+                        </Button>
+                    </Link>
                 </Box>
                 {props.details.map((detail:string, index:number)=>(
                     <Text className={oswald.className} fontSize={'24px'} key={index}>• {detail}</Text>

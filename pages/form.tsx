@@ -1,18 +1,109 @@
-import { Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, useToast, Text } from '@chakra-ui/react';
-import { useState } from 'react';
+import { Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, useToast, Text, Select } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import { sendContactForm } from '../lib/api';
 
 const initValues = { email:'', name:'', kurse:''}
 const initState = { isLoading: false, error: '', values: initValues }
 
-export default function Form() {
+export default function FormPage() {
+  type kurses_file = {
+    kurses: Array<kurse>,
+    rows: Array<row>
+}
+  type kurse = { name: string, schedule: string, days:string, color:string, id:number }
+  type row = { name: string, schedule: string, days:string, color:string, id:string }
+  
+  
   const toast = useToast();
   const [state, setState] = useState(initState);
 
   const { values, isLoading, error } = state;
 
+  useEffect(() => {
+    const url = window.location.href;
+    const params = new URLSearchParams(url.split('#')[1]);
+    switch (params.toString()) {
+      case 'fruhling-gruppei=':
+        setState((prev) => ({
+          ...prev,
+          values: {
+            ...prev.values,
+            kurse: '1',
+          },
+        }))
+        break
+      case 'fruhling-gruppeii=':
+        setState((prev) => ({
+          ...prev,
+          values: {
+            ...prev.values,
+            kurse: '2',
+          },
+        }))
+        break
+      case 'sommer-gruppei=':
+        setState((prev) => ({
+          ...prev,
+          values: {
+            ...prev.values,
+            kurse: '3',
+          },
+        }))
+        break
+      case 'sommer-gruppeii=':
+        setState((prev) => ({
+          ...prev,
+          values: {
+            ...prev.values,
+            kurse: '4',
+          },
+        }))
+        break
+      case 'herbst-gruppei=':
+        setState((prev) => ({
+          ...prev,
+          values: {
+            ...prev.values,
+            kurse: '5',
+          },
+        }))
+        break
+      case 'herbst-gruppeii=':
+        setState((prev) => ({
+          ...prev,
+          values: {
+            ...prev.values,
+            kurse: '6',
+          },
+        }))
+        break
+      case 'winter-gruppei=':
+        setState((prev) => ({
+          ...prev,
+          values: {
+            ...prev.values,
+            kurse: '7',
+          },
+        }))
+        break
+      case 'winter-gruppeii=':
+        setState((prev) => ({
+          ...prev,
+          values: {
+            ...prev.values,
+            kurse: '8',
+          },
+        }))
+        break
+    }
+  }, [values]);
+
+  useEffect(()=>{console.log(state)},[state])
+
+  const contents:kurses_file = require('public/assets/kurses.json');
+  const data = contents.rows
  
-  const handleChange = (e: { target: any; }) =>{
+  const handleChange = (e: { target: any; }) => {
     const target = e.target
     setState((prev) => ({
       ...prev,
@@ -55,6 +146,24 @@ export default function Form() {
         </Text>
       )}
 
+      <FormControl isRequired isInvalid={!values.email} mb={5}>
+        <FormLabel>Kurse</FormLabel>
+        <Select
+            name="kurse"
+            value={values.kurse}
+            placeholder='Select a Kurse'
+            disabled={values.kurse == '' ? false : true}
+            onChange={handleChange}
+            id='kurseSelect'
+          >
+          {data.map((item: row, index: number) => (
+            <option value={index+1} key={index}> {item.name} - {item.schedule} </option>
+                ))
+            } 
+          </Select>
+        <FormErrorMessage>Required</FormErrorMessage>
+      </FormControl>
+      
 
       <FormControl isRequired isInvalid={!values.email} mb={5}>
         <FormLabel>Email</FormLabel>
@@ -75,22 +184,6 @@ export default function Form() {
           name="name"
           errorBorderColor="red.300"
           value={values.name}
-          onChange={handleChange}
-        />
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
-
-      <FormControl
-        isRequired
-        isInvalid={!values.kurse}
-        mb={5}
-      >
-        <FormLabel>Kurse</FormLabel>
-        <Input
-          type="text"
-          name="kurse"
-          errorBorderColor="red.300"
-          value={values.kurse}
           onChange={handleChange}
         />
         <FormErrorMessage>Required</FormErrorMessage>
