@@ -4,7 +4,7 @@ import { mailOptions, transporter } from "../../config/nodemailer";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method = 'POST') {
         const data = req.body
-        if (!data.email || !data.name || !data.kurse) {
+        if (!data.email || !data.name || !data.kurse || !data.child) {
             return res.status(400).json({message: "Bad request"})
       }
      

@@ -1,11 +1,11 @@
-import { Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, useToast, Text, Select } from '@chakra-ui/react';
+import { Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, Select, Text, useToast } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { sendContactForm, sendNotice } from '../lib/api';
+import { sendAnmeldung, sendAnmeldungToAdmin } from '../lib/api';
 
-const initValues = { email:'', name:'', kurse:''}
+const initValues = { email:'', name:'', kurse:'', child:''}
 const initState = { isLoading: false, error: '', values: initValues }
 
-export default function FormPage() {
+export default function AnmeldungFormPage() {
   type kurses_file = {
     kurses: Array<kurse>,
     rows: Array<row>
@@ -120,7 +120,7 @@ export default function FormPage() {
       isLoading: true,
     }));
     try {
-      await sendContactForm(values);
+      await sendAnmeldung(values);
       setState(initState);
       toast({
         title: "Message sent.",
@@ -136,14 +136,14 @@ export default function FormPage() {
       }));
     }
     try {
-      await sendNotice(values);
+      await sendAnmeldungToAdmin(values);
       setState(initState);
-      toast({
-        title: "Message received.",
-        status: "success",
-        duration: 2000,
-        position: "top",
-      });
+      // toast({
+      //   title: "Message received.",
+      //   status: "success",
+      //   duration: 2000,
+      //   position: "top",
+      // });
     } catch (error:any) {
       setState((prev) => ({
         ...prev,
@@ -162,7 +162,7 @@ export default function FormPage() {
         </Text>
       )}
 
-      <FormControl isRequired isInvalid={!values.email} mb={5}>
+      <FormControl isRequired isInvalid={!values.kurse} mb={5}>
         <FormLabel>Kurse</FormLabel>
         <Select
             name="kurse"
@@ -205,12 +205,24 @@ export default function FormPage() {
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
 
+      <FormControl isRequired isInvalid={!values.name} mb={5}>
+        <FormLabel>Child`&apos`s name</FormLabel>
+        <Input
+          type="text"
+          name="child"
+          errorBorderColor="red.300"
+          value={values.child}
+          onChange={handleChange}
+        />
+        <FormErrorMessage>Required</FormErrorMessage>
+      </FormControl>
+
       <Button
         variant="outline"
         colorScheme="blue"
         isLoading={isLoading}
         disabled={
-          !values.name || !values.email || !values.kurse
+          !values.name || !values.email || !values.kurse || !values.child 
         }
         onClick={onSubmit}
       >

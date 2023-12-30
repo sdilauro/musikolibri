@@ -47,7 +47,7 @@ const GruppeItem = (props:GruppeItemProps) => {
                     <Text mx={'3rem'} className={oswald.className} fontSize={'24px'} noOfLines={1} textAlign={'center'}>{props.schedule}</Text>
                     <Text mx={'3rem'} className={oswald.className} fontSize={'24px'} flex={1}>{props.days}</Text>
 
-                    <Link style={{ textDecoration: 'none' }} href={`/form#${withOutSpaces(props.name).toLowerCase().replace("ü", "u")}`}>
+                    <Link style={{ textDecoration: 'none' }} href={`/anmeldung-form#${withOutSpaces(props.name).toLowerCase().replace("ü", "u")}`}>
                         <Button paddingX='2rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} ml={'3rem'} >
                             <Text className={gochi.className} fontSize={'24px'}>Auswählen</Text>    
                         </Button>

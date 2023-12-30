@@ -20,12 +20,12 @@ type GruppeCardProps = { name: string, price: number, startOn:string, finishOn:s
 const GruppeCard = (props:GruppeCardProps) => {
     
     return (
-        <Card maxW='md' backgroundColor={'#f4e4dc'} borderRadius={'32px'} padding='2rem' margin='2rem' minW={'400px'} key={props.id}>
+        <Card maxW='md' backgroundColor={'#f4e4dc'} borderRadius={'32px'} padding='2rem' margin='2rem' minW={'400px'} key={props.id} >
             <CardBody>
                 <Flex flex='1' gap='0' alignItems='center' flexWrap='wrap'>
                     <Box>
                         <Flex flex='1' alignItems='center' flexWrap='wrap'>
-                            <Flex flexDir='column' flex='1' alignItems='top'>
+                            <Flex flexDir='column' flex='1' alignItems='top' textColor={'black'}>
                                 <Text 
                                 marginBottom={'-1rem'}
                                 fontSize={'48px'} 

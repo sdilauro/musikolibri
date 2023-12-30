@@ -17,6 +17,19 @@ html, body {
   font-weight: 400;
 }
 
+.footer {
+  background-color:#f4e4dc;
+  min-height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+
 main {
   margin: auto;
   min-height: 100vh;

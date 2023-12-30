@@ -4,6 +4,7 @@ import * as React from 'react';
 import { Button, Flex, Image } from '@chakra-ui/react';
 import Link from 'next/link'
 import { Gochi_Hand, Oswald } from 'next/font/google'
+import { navBarPages } from '../../config/config';
  
 const oswald = Oswald({
   weight: '400',
@@ -16,14 +17,6 @@ const gochi = Gochi_Hand({
   })
   
    
-type link = { name: string, route: string }
-
-const pages: Array<link> = [
-    { name: 'Über mich', route: '/uber-mich' },
-    { name: 'Räumlichkeiten', route: '/raumlichkeiten' },
-    { name: 'Termine & Preise', route: '/termine-und-preise' },
-    { name: 'Kontakt', route: '/form' }
-]
 
 function ResponsiveAppBar() {
     return (
@@ -33,13 +26,12 @@ function ResponsiveAppBar() {
                 {/* <Stack direction={['column', 'row']} spacing='50px' alignItems={'center'}> */}
                     <Link style={{ textDecoration: 'none' }} href={'/'}>
                         <Image 
-                                maxH={'3rem'}
-                                src='/assets/musikolibri-logo.png'
-                                alt='Logo'
-                                
+                            maxH={'3rem'}
+                            src='/assets/musikolibri-logo.png'
+                            alt='Logo'     
                             />
                     </Link>
-                    {pages.map((item, index) => <Link className={oswald.className} style={{ textDecoration: 'none' }} key={index} href={item.route}>{item.name}</Link>)}
+                    {navBarPages.map((item, index) => <Link className={oswald.className} style={{ textDecoration: 'none' }} key={index} href={item.route}>{item.name}</Link>)}
                     <Link style={{ textDecoration: 'none' }} href={'/anmeldung'}>
                         <Button paddingX='2rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} fontSize={'24px'} className={gochi.className} fontWeight={400}>Anmeldung</Button>
                     </Link>
