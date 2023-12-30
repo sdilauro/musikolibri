@@ -1,19 +1,6 @@
-import ResponsiveAppBar from '../components/navbar'
-import { Box, Button, Stack, Text, Image } from '@chakra-ui/react'
-import { ChakraProvider } from '@chakra-ui/react'
-import { Gochi_Hand } from 'next/font/google'
-import { Oswald } from 'next/font/google'
+import { Box, Button, Image, Stack, Text } from '@chakra-ui/react'
+import { gochi, oswald } from '../config/config'
  
-const oswald = Oswald({
-  weight: '400',
-  subsets: ['latin'],
-})
-
-const gochi = Gochi_Hand({
-  weight: '400',
-  subsets: ['latin'],
-})
-
 export default function HomePage() {
   return (
       <>

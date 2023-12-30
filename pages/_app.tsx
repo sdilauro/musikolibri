@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { Box, ChakraProvider, Flex } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
 import './../styles/App.css'
 import ResponsiveAppBar from '../components/navbar'
@@ -8,9 +8,13 @@ import Footer from '../components/footer'
 function MyApp({Component, pageProps}:AppProps) {
   return(
     <ChakraProvider>
-      <ResponsiveAppBar/>
-      <Component {...pageProps} />
-      <Footer/>
+      <Flex minH={'100vh'} flexDir={'column'}>
+        <ResponsiveAppBar />
+          <Box flex={1} alignContent={'center'}>
+            <Component {...pageProps} />
+          </Box>
+        <Footer />
+      </Flex>
     </ChakraProvider>
   )
 }
