@@ -26,4 +26,6 @@ export const gochi = Gochi_Hand({
 export const oswald = Oswald({
     weight: '400',
     subsets: ['latin'],
-  })
+})
+  
+export const maxWidth:string = '(max-width: 900px)'

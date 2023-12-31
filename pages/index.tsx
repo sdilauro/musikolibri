@@ -1,7 +1,8 @@
-import { Box, Button, Image, Stack, Text } from '@chakra-ui/react'
-import { gochi, oswald } from '../config/config'
+import { Box, Button, Center, Flex, Image, Stack, Text, useMediaQuery } from '@chakra-ui/react'
+import { gochi, maxWidth, oswald } from '../config/config'
  
 export default function HomePage() {
+  const [isSmallScreen] = useMediaQuery(maxWidth);
   return (
       <>
         <Box sx={{ w:'100%'}} className='light'>
@@ -58,7 +59,7 @@ export default function HomePage() {
         </Box>
         <Box sx={{ w:'100%' }} className='dark' justifyContent={'space-between'}>
           <Box className='content-size'>
-            <Box sx={{paddingY:'2rem', display:'flex', flexDir:'row', width:'100%', alignItems:'self-start' }} className='dark'>
+            <Box flexDir={isSmallScreen ? 'column' : 'row'}  alignItems={isSmallScreen ? 'center' : 'self-start'} sx={{paddingY:'2rem', display:'flex', width:'100%' }} className='dark'>
               <Box sx={{display:'flex', flexDir:'column', flex:'0.5', alignItems:'self-start'}} className='dark'>
                 <Text
                   noOfLines={2}
@@ -82,7 +83,20 @@ export default function HomePage() {
                 </Text>
               </Box>
               <Box sx={{display:'flex', flexDir:'column', flex:'0.5', alignItems:'self-end'}} className='dark'>
-                <Image 
+              {isSmallScreen &&
+                  <Image 
+                    marginTop='1rem'
+                    boxSize='30rem'
+                    src='/assets/piano.png'
+                    alt='Piano'
+                    fallbackSrc='https://via.placeholder.com/512'
+                    borderRadius='35px'
+                  marginX='auto'
+                  objectFit='contain'
+                    />                
+              }
+              {!isSmallScreen && 
+              <Image 
                   boxSize='30rem'
                   src='/assets/piano.png'
                   alt='Piano'
@@ -91,7 +105,9 @@ export default function HomePage() {
                   position={'relative'}
                   top={'-8rem'}
                   paddingBottom={'-192px'}
+                  objectFit='contain'
                 />
+              }
               </Box>
             </Box>
           </Box>

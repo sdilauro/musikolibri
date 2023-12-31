@@ -14,7 +14,7 @@ const oswald = Oswald({
 function Footer() {
     return (
         <Flex className="footer" w='100%' >
-            <Flex w='80%' direction={['column', 'row']} className="footer" height={'4rem'}>
+            <Flex w='80%' direction={'row'} className="footer" height={'4rem'}>
                 {footerPages.map((item, index) => <Link className={oswald.className} style={{ textDecoration: 'none', margin:'2rem' }} key={index} href={item.route}>{item.name}</Link>)}              
             </Flex>
         </Flex>

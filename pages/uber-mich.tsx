@@ -1,10 +1,11 @@
 "use client";
 
-import { Box, Image, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, List, ListIcon, ListItem, Text, useMediaQuery } from "@chakra-ui/react";
 import { Gochi_Hand } from 'next/font/google';
 import { IoMdMusicalNote } from "react-icons/io";
 import DatedParagraph from "../components/dated-paragraph";
-
+import { maxWidth } from "../config/config";
+import 'public/assets/timeline.json'
 
 const gochi = Gochi_Hand({
     weight: '400',
@@ -22,6 +23,8 @@ const contents = require('public/assets/timeline.json');
 data = contents.timeline
 
 export default function UberMichPage() {
+    const [isSmallScreen] = useMediaQuery(maxWidth);
+
     return (
         <>
             <Box sx={{ w: '100%' }} className='light'>
@@ -39,8 +42,8 @@ export default function UberMichPage() {
 
                 </Box>
             </Box>
-            <Box sx={{ w: '100%' }} className='dark'>
-                <Box sx={{ paddingY: '2rem', display: 'flex', flexDir: 'row', width: '75%', alignItems: 'self-start' }} className='dark'>
+            <Flex  sx={{ w: '100%' }} className='dark'>
+                <Box flexDir={isSmallScreen?'column-reverse':'row'} sx={{ paddingY: '2rem', display: 'flex', width: '75%', alignItems: 'self-start' }} className='dark'>
                     <Box sx={{ mx: '3rem', display: 'flex', flexDir: 'column', flex: '0.5', alignItems: 'self-start' }} className='dark'>
                         <Text
                             noOfLines={2}
@@ -76,7 +79,7 @@ export default function UberMichPage() {
                             Seit 2006 unterrichte ich Klavier. Ich bin ein leidenschaftlicher Mensch, der die Musik, das Unterrichten und die Kinder sehr liebt.
                         </Text>
                     </Box>
-                    <Box sx={{ mx: '3rem', display: 'flex', flexDir: 'column', flex: '0.5' }} className='dark'>
+                    <Box sx={{display: 'flex', flex: '0.5' }} flexDir={'row'} alignItems={'center'} w={'100%'} className='dark'>
                         <Image
                             width='25rem'
                             src='/assets/anabela.jpg'
@@ -89,7 +92,7 @@ export default function UberMichPage() {
                         />
                     </Box>
                 </Box>
-            </Box>
+            </Flex>
             <Box sx={{ w: '100%' }} className='light'>
                 <Box sx={{ paddingY: '2rem', paddingBottom: '6rem', display: 'flex', flexDir: 'column', maxWidth: '1440px', width: '80%' }} className='light'>
                     <Text

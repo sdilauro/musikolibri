@@ -1,11 +1,12 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex, useMediaQuery } from "@chakra-ui/react";
 import KursCard from "../components/kurs-card";
+import { maxWidth } from "../config/config";
 
 export default function TermineUndPreisePage() {
+    const [isSmallScreen] = useMediaQuery(maxWidth);
     return (
         <>
-
-            <Box className="light" alignItems={"self-start"}>
+            <Flex className="light" alignItems={isSmallScreen?'center':'self-start'} flexDir={isSmallScreen?'column':'row'}>
                 <KursCard
                     name="Frühling"
                     startOn="Februar"
@@ -24,8 +25,8 @@ export default function TermineUndPreisePage() {
                     details={["Gruppe I & II","11 Termine à 40 Min","Inkl. Texte"]}
                     id={"sommer"}
                 />
-            </Box>
-            <Box className="light">
+            </Flex>
+            <Flex className="light" alignItems={isSmallScreen?'center':'self-start'} flexDir={isSmallScreen?'column':'row'}>
                 <KursCard
                     name="Herbost"
                     startOn="August"
@@ -44,7 +45,7 @@ export default function TermineUndPreisePage() {
                     details={["Gruppe I & II","7 Termine à 40 Min","Inkl. Texte"]}
                     id={"winter"}
                 />
-            </Box>
+            </Flex>
         </>
   )
 }

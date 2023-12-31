@@ -1,7 +1,8 @@
 'use client'
 
-import { Divider, Flex, Text, Image } from '@chakra-ui/react';
+import { Divider, Flex, Text, Image, useMediaQuery } from '@chakra-ui/react';
 import { Gochi_Hand, Oswald } from 'next/font/google';
+import { maxWidth } from '../../config/config';
  
 const oswald = Oswald({
     weight: '400',
@@ -17,6 +18,7 @@ export type DatedParagraphProps = { date: string, paragraph: string, im_src: str
 
 
 const DatedParagraph = (props:DatedParagraphProps) => {
+    const [isSmallScreen] = useMediaQuery(maxWidth);
     
     return (
         <Flex flexDir='row' alignContent='center' maxW={'800px'} marginX={'auto'}>
@@ -26,6 +28,7 @@ const DatedParagraph = (props:DatedParagraphProps) => {
                 fontSize='4xl' bgGradient='linear(to-l, #7A59CA, #E6175B)' 
                 bgClip='text'
                 paddingX= '0.5rem'
+                
                 >
                     {props.date}
                 </Text>
