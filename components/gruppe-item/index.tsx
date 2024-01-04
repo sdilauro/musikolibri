@@ -19,7 +19,7 @@ const firaCode = Fira_Code({
     subsets: ['latin'],
   })
    
-type GruppeItemProps = { name: string, schedule: string, days:string, color:string, id:string, key:number }
+type GruppeItemProps = { name: string, schedule: string, days:string, color:string, id:string, num:string }
 
 
 const GruppeItem = (props:GruppeItemProps) => {
@@ -50,7 +50,7 @@ const GruppeItem = (props:GruppeItemProps) => {
                     <Text mx={'3rem'} className={oswald.className} fontSize={isSmallScreen?'18':'24'} noOfLines={1} textAlign={'center'}>{props.schedule}</Text>
                     <Text mx={'3rem'} className={oswald.className} fontSize={isSmallScreen?'18':'24'} flex={1}>{props.days}</Text>
 
-                    <Link style={{ textDecoration: 'none' }} href={`/anmeldung-form#${withOutSpaces(props.name).toLowerCase().replace("ü", "u")}`}>
+                    <Link style={{ textDecoration: 'none' }} href={`/anmeldung-form#${props.num}`}>
                         <Button paddingX='2rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} mx={'3rem'} my={'1rem'} >
                             <Text className={gochi.className} fontSize={isSmallScreen?'18':'24'}>Auswählen</Text>    
                         </Button>

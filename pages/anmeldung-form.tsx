@@ -21,82 +21,17 @@ export default function AnmeldungFormPage() {
 
   useEffect(() => {
     const url = window.location.href;
-    const params = new URLSearchParams(url.split('#')[1]);
-    switch (params.toString()) {
-      case 'fruhling-gruppei=':
-        setState((prev) => ({
-          ...prev,
-          values: {
-            ...prev.values,
-            kurse: '1',
-          },
-        }))
-        break
-      case 'fruhling-gruppeii=':
-        setState((prev) => ({
-          ...prev,
-          values: {
-            ...prev.values,
-            kurse: '2',
-          },
-        }))
-        break
-      case 'sommer-gruppei=':
-        setState((prev) => ({
-          ...prev,
-          values: {
-            ...prev.values,
-            kurse: '3',
-          },
-        }))
-        break
-      case 'sommer-gruppeii=':
-        setState((prev) => ({
-          ...prev,
-          values: {
-            ...prev.values,
-            kurse: '4',
-          },
-        }))
-        break
-      case 'herbst-gruppei=':
-        setState((prev) => ({
-          ...prev,
-          values: {
-            ...prev.values,
-            kurse: '5',
-          },
-        }))
-        break
-      case 'herbst-gruppeii=':
-        setState((prev) => ({
-          ...prev,
-          values: {
-            ...prev.values,
-            kurse: '6',
-          },
-        }))
-        break
-      case 'winter-gruppei=':
-        setState((prev) => ({
-          ...prev,
-          values: {
-            ...prev.values,
-            kurse: '7',
-          },
-        }))
-        break
-      case 'winter-gruppeii=':
-        setState((prev) => ({
-          ...prev,
-          values: {
-            ...prev.values,
-            kurse: '8',
-          },
-        }))
-        break
-    }
-  }, [values]);
+    const kurs_number = url.split('#')[1]
+
+    setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        kurse: kurs_number,
+      },
+    }))
+
+  }, []);
 
   useEffect(()=>{console.log(state)},[state])
 
@@ -137,7 +72,7 @@ export default function AnmeldungFormPage() {
     }
     try {
       await sendAnmeldungToAdmin(values);
-      setState(initState);
+      // setState(initState);
       // toast({
       //   title: "Message received.",
       //   status: "success",
