@@ -17,7 +17,7 @@ const oswald = Oswald({
 export type DatedParagraphProps = { date: string, paragraph: string, im_src: string, im_alt: string }
 
 
-const DatedParagraph = (props:DatedParagraphProps) => {
+const DatedParagraphBig = (props:DatedParagraphProps) => {
     const [isSmallScreen] = useMediaQuery(maxWidth);
     
     return (
@@ -34,8 +34,8 @@ const DatedParagraph = (props:DatedParagraphProps) => {
                 </Text>
                 <Divider orientation='vertical' flex={1} borderColor={'#E6175B'} marginBottom={'1rem'} />
             </Flex>
-            <Flex flexDir='column' alignItems='center' marginRight={'3rem'} minWidth={'8rem'}>
-                <Text fontSize='1.25rem' marginBottom={'1rem'}>{props.paragraph}</Text>
+            <Flex flexDir='column' alignItems='center'>
+                <Text fontSize='1.25rem' marginBottom={'1rem'} textAlign='justify'>{props.paragraph}</Text>
                 <Image
                     width='25rem'
                     src={props.im_src}
@@ -49,4 +49,4 @@ const DatedParagraph = (props:DatedParagraphProps) => {
         </Flex>
     )
 }
-export default DatedParagraph;
+export default DatedParagraphBig;
