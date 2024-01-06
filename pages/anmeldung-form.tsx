@@ -1,19 +1,38 @@
-import { Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, Select, Text, useToast } from '@chakra-ui/react';
+import { Box, Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, Select, Text, useMediaQuery, useToast, Flex, FormHelperText, Spacer, Textarea } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { sendAnmeldung, sendAnmeldungToAdmin } from '../lib/api';
+import { maxWidth } from "../config/config";
+import { Gochi_Hand } from 'next/font/google';
 
-const initValues = { email:'', name:'', kurse:'', child:''}
+const initValues = {
+  email: '',
+  name: '', 
+  vorname: '', 
+  adresse: '',
+  plz: '',
+  ort: '',
+  telefon: '',
+  kurse: '', 
+  child: '',
+  geburtsdatum: '',
+  nachricht: '' }
 const initState = { isLoading: false, error: '', values: initValues }
+
+const gochi = Gochi_Hand({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export default function AnmeldungFormPage() {
   type kurses_file = {
     kurses: Array<kurse>,
     rows: Array<row>
-}
-  type kurse = { name: string, schedule: string, days:string, color:string, id:number }
-  type row = { name: string, schedule: string, days:string, color:string, id:string }
-  
-  
+  }
+  const [isSmallScreen] = useMediaQuery(maxWidth);
+  type kurse = { name: string, schedule: string, days: string, color: string, id: number }
+  type row = { name: string, weekday: string, schedule: string, days: string, color: string, id: string }
+
+
   const toast = useToast();
   const [state, setState] = useState(initState);
 
@@ -33,11 +52,11 @@ export default function AnmeldungFormPage() {
 
   }, []);
 
-  useEffect(()=>{console.log(state)},[state])
+  useEffect(() => { console.log(state) }, [state])
 
-  const contents:kurses_file = require('public/assets/kurses.json');
+  const contents: kurses_file = require('public/assets/kurses.json');
   const data = contents.rows
- 
+
   const handleChange = (e: { target: any; }) => {
     const target = e.target
     setState((prev) => ({
@@ -56,14 +75,14 @@ export default function AnmeldungFormPage() {
     }));
     try {
       await sendAnmeldung(values);
-      setState(initState);
+      //setState(initState);
       toast({
         title: "Message sent.",
         status: "success",
         duration: 2000,
         position: "top",
       });
-    } catch (error:any) {
+    } catch (error: any) {
       setState((prev) => ({
         ...prev,
         isLoading: false,
@@ -79,7 +98,7 @@ export default function AnmeldungFormPage() {
       //   duration: 2000,
       //   position: "top",
       // });
-    } catch (error:any) {
+    } catch (error: any) {
       setState((prev) => ({
         ...prev,
         isLoading: false,
@@ -89,80 +108,246 @@ export default function AnmeldungFormPage() {
   }
 
   return (
-    <Container maxW="450px" mt={12}>
-      <Heading>Contact</Heading>
-      {error && (
-        <Text color="red.300" my={4} fontSize="xl">
-          {error}
-        </Text>
-      )}
+    <Box sx={{ w: '100%' }} className='light'>
+      <Container maxW="650px" mt={12}>
 
-      <FormControl isRequired isInvalid={!values.kurse} mb={5}>
-        <FormLabel>Kurse</FormLabel>
-        <Select
+        <Box sx={{ paddingY: '2rem', paddingBottom: '3rem', display: 'flex', flexDir: 'column' }} className='light'>
+          <Text
+            noOfLines={2}
+            bgGradient='linear(to-l, #7A59CA, #E6175B)'
+            bgClip='text'
+            className={gochi.className}
+            fontSize='5xl'
+            align={'center'}
+          >
+            Anmeldeformular
+          </Text>
+
+        </Box>
+
+        {error && (
+          <Text color="red.300" my={4} fontSize="xl">
+            {error}
+          </Text>
+        )}
+
+        <FormControl isRequired isInvalid={!values.kurse} mb={5}>
+          <FormLabel>Kurs</FormLabel>
+          <Select
             name="kurse"
             value={values.kurse}
-            placeholder='Select a Kurse'
-            disabled={values.kurse == '' ? false : true}
+            placeholder='Kurs auswählen'
             onChange={handleChange}
             id='kurseSelect'
+            bg='w'
           >
-          {data.map((item: row, index: number) => (
-            <option value={index+1} key={index}> {item.name} - {item.schedule} </option>
-                ))
-            } 
+            {data.map((item: row, index: number) => (
+              <option value={index + 1} key={index}> {item.name}, {item.weekday} - {item.schedule} </option>
+            ))
+            }
           </Select>
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
-      
+          <FormErrorMessage>Required</FormErrorMessage>
+        </FormControl>
 
-      <FormControl isRequired isInvalid={!values.email} mb={5}>
-        <FormLabel>Email</FormLabel>
-        <Input
-          type="email"
-          name="email"
-          errorBorderColor="red.300"
-          value={values.email}
-          onChange={handleChange}
-        />
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
+        <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
+          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
 
-      <FormControl isRequired isInvalid={!values.name} mb={5}>
-        <FormLabel>Name</FormLabel>
-        <Input
-          type="text"
-          name="name"
-          errorBorderColor="red.300"
-          value={values.name}
-          onChange={handleChange}
-        />
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
+            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%" }} className='light'>
+              <FormControl isRequired>
+                <FormLabel>Name</FormLabel>
+                <Input
+                type='text'
+                name='name'
+                value={values.name}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+            </Box>
 
-      <FormControl isRequired isInvalid={!values.name} mb={5}>
-        <FormLabel>Child`&apos`s name</FormLabel>
-        <Input
-          type="text"
-          name="child"
-          errorBorderColor="red.300"
-          value={values.child}
-          onChange={handleChange}
-        />
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
+            <Spacer />
 
-      <Button
-        variant="outline"
-        colorScheme="blue"
-        isLoading={isLoading}
-        disabled={
-          !values.name || !values.email || !values.kurse || !values.child 
-        }
-        onClick={onSubmit}
-      >
-        Submit
-      </Button>
-    </Container>
+            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%"  }} className='light'>
+              <FormControl isRequired>
+                <FormLabel>Vorname</FormLabel>
+                <Input
+                type='text'
+                name='vorname'
+                value={values.vorname}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+            </Box>
+
+          </Flex>
+        </Flex>
+
+        <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
+          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
+
+            <Box sx={{ display: 'flex', flexDir: 'row', flex: '11', alignItems: 'self-start' }} className='light'>
+              <FormControl isRequired>
+                <FormLabel>Straße, Hausnr.</FormLabel>
+                <Input
+                type='text'
+                name='adresse'
+                value={values.adresse}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+            </Box>
+
+            <Spacer />
+
+            <Box sx={{ display: 'flex', flexDir: 'row', flex: '5', alignItems: 'self-start' }} className='light'>
+              <FormControl isRequired>
+                <FormLabel>PLZ</FormLabel>
+                <Input
+                type='text'
+                name='plz'
+                value={values.plz}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+            </Box>
+
+            <Spacer />
+
+            <Box sx={{ display: 'flex', flexDir: 'row', flex: '5', alignItems: 'self-start' }} className='light'>
+              <FormControl isRequired >
+                <FormLabel>Ort</FormLabel>
+                <Input
+                type='text'
+                name='ort'
+                value={values.ort}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+            </Box>
+
+          </Flex>
+        </Flex>
+
+        <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
+          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
+
+            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%" }} className='light'>
+              <FormControl isRequired>
+                <FormLabel>E-Mail</FormLabel>
+                <Input
+                type='email'
+                name='email'
+                value={values.email}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+            </Box>
+
+            <Spacer />
+
+            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%"  }} className='light'>
+              <FormControl>
+                <FormLabel>Telefon / Mobil</FormLabel>
+                <Input
+                type='tel'
+                name='telefon'
+                value={values.telefon}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+            </Box>
+
+          </Flex>
+        </Flex>
+
+        <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
+          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
+
+            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%" }} className='light'>
+              <FormControl isRequired>
+                <FormLabel>Vorname des Kindes</FormLabel>
+                <Input
+                type='text'
+                name='child'
+                value={values.child}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+            </Box>
+
+            <Spacer />
+
+            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%"  }} className='light'>
+              <FormControl>
+                <FormLabel>Geburtsdatum</FormLabel>
+                <Input
+                type='date'
+                name='geburtsdatum'
+                value={values.geburtsdatum}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+            </Box>
+
+          </Flex>
+        </Flex>
+
+        <FormControl sx={{paddingY: '1rem'}}>
+                <FormLabel>Hinterlasse deine Nachricht</FormLabel>
+                <Textarea
+                name='nachricht'
+                value={values.nachricht}
+                onChange={handleChange}
+                bg='w'
+                />
+              </FormControl>
+
+              <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
+          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
+
+         
+          <Text
+            noOfLines={2}
+            bgGradient='linear(to-l, #7A59CA, #E6175B)'
+            bgClip='text'
+            className={gochi.className}
+            fontSize='4xl'
+            align={'left'}
+          >
+            Lass uns Musik machen!
+          </Text>
+
+
+            <Spacer />
+
+            <Button
+                  colorScheme='purple'
+                  variant='solid'
+                  borderRadius={"1.5rem"}
+                  height={"3rem"}
+          isLoading={isLoading}
+          disabled={
+            !values.name || !values.email || !values.kurse || !values.child
+          }
+          onClick={onSubmit}
+        >
+          Absenden
+        </Button>
+
+          </Flex>
+        </Flex>
+
+
+
+      </Container>
+    </Box>
   )
 }

@@ -13,7 +13,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         kurses: Array<kurseProps>,
         rows: Array<rowProps>
     }
-
+ 
     type kurseProps = { name: string, schedule: string, days:string, color:string, id:string }
 
     type rowProps = { name: string, schedule: string, days:string, color:string, id:string }
