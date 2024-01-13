@@ -1,8 +1,9 @@
-import { Box, Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, Select, Text, useMediaQuery, useToast, Flex, FormHelperText, Spacer, Textarea } from '@chakra-ui/react';
+import { Box, Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, Select, Text, useMediaQuery, useToast, Flex, FormHelperText, Spacer, Textarea, ThemeProvider, LightMode } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { sendAnmeldung, sendAnmeldungToAdmin } from '../lib/api';
 import { maxWidth } from "../config/config";
 import { Gochi_Hand } from 'next/font/google';
+import FormField from '../components/form-field';
 
 const initValues = {
   email: '',
@@ -110,8 +111,7 @@ export default function AnmeldungFormPage() {
   return (
     <Box sx={{ w: '100%' }} className='light'>
       <Container maxW="650px" mt={12}>
-
-        <Box sx={{ paddingY: '2rem', paddingBottom: '3rem', display: 'flex', flexDir: 'column' }} className='light'>
+        <Box sx={{ paddingY: '2rem', paddingBottom: '3rem', display: 'flex', flexDir: 'column' }}>
           <Text
             noOfLines={2}
             bgGradient='linear(to-l, #7A59CA, #E6175B)'
@@ -131,222 +131,87 @@ export default function AnmeldungFormPage() {
           </Text>
         )}
 
-        <FormControl isRequired isInvalid={!values.kurse} mb={5}>
-          <FormLabel>Kurs</FormLabel>
-          <Select
-            name="kurse"
-            value={values.kurse}
-            placeholder='Kurs auswählen'
+        <FormControl isRequired isInvalid={!values.kurse}  p={"0.5rem"}  >
+            <FormLabel>Kurs</FormLabel>
+            <Select
+              name="kurse"
+              value={values.kurse}
+              placeholder='Kurs auswählen'
+              onChange={handleChange}
+              id='kurseSelect'
+              bg='#f6f6f6'
+            >
+              {data.map((item: row, index: number) => (
+                <option color='#f6f6f6' value={index + 1} key={index} > {item.name}, {item.weekday} - {item.schedule} </option>
+              ))
+              }
+            </Select>
+            <FormErrorMessage>Required</FormErrorMessage>
+        </FormControl>
+        
+        <Flex alignItems={isSmallScreen ? 'stretch' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
+          <FormField name='name' type='text' title='Name' isRequired value={values.name} onChange={handleChange}/>
+          <FormField name='vorname' type='text' title='Vorname' isRequired value={values.vorname} onChange={handleChange}/>
+        </Flex>
+
+        <Flex flexDir={isSmallScreen ? 'column' : 'row'}>
+          <FormField name='adresse' type='text' title='Straße, Hausnr.' isRequired value={values.adresse} onChange={handleChange} flex={15} />
+          <Flex flex={10}>
+            <FormField name='plz' type='text' title='PLZ' isRequired value={values.plz} onChange={handleChange} />
+            <FormField name='ort' type='text' title='Ort' isRequired value={values.ort} onChange={handleChange} />
+          </Flex>  
+        </Flex>
+
+        <Flex flexDir={isSmallScreen ? 'column' : 'row'} w={"100%"}>
+          <FormField name='email' type='email' title='E-Mail' isRequired value={values.email} onChange={handleChange} />
+          <FormField name='telefon' type='tel' title='Telefon / Mobil' isRequired value={values.telefon} onChange={handleChange} />
+        </Flex>
+
+        <Flex flexDir={isSmallScreen ? 'column' : 'row'}>
+          <FormField name='child' type='text' title='Vorname des Kindes' isRequired value={values.child} onChange={handleChange} />
+          <FormField name='geburtsdatum' type='date' title='Geburtsdatum' isRequired value={values.geburtsdatum} onChange={handleChange} />
+        </Flex>
+        
+        <FormControl sx={{ p:"0.5rem"}}>
+          <FormLabel>Hinterlasse deine Nachricht</FormLabel>
+          <Textarea
+            name='nachricht'
+            value={values.nachricht}
             onChange={handleChange}
-            id='kurseSelect'
-            bg='w'
-          >
-            {data.map((item: row, index: number) => (
-              <option value={index + 1} key={index}> {item.name}, {item.weekday} - {item.schedule} </option>
-            ))
-            }
-          </Select>
-          <FormErrorMessage>Required</FormErrorMessage>
+            bg='#f6f6f6'
+            
+            />
         </FormControl>
 
-        <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
-          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
-
-            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%" }} className='light'>
-              <FormControl isRequired>
-                <FormLabel>Name</FormLabel>
-                <Input
-                type='text'
-                name='name'
-                value={values.name}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-            </Box>
-
-            <Spacer />
-
-            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%"  }} className='light'>
-              <FormControl isRequired>
-                <FormLabel>Vorname</FormLabel>
-                <Input
-                type='text'
-                name='vorname'
-                value={values.vorname}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-            </Box>
-
-          </Flex>
-        </Flex>
-
-        <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
-          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
-
-            <Box sx={{ display: 'flex', flexDir: 'row', flex: '11', alignItems: 'self-start' }} className='light'>
-              <FormControl isRequired>
-                <FormLabel>Straße, Hausnr.</FormLabel>
-                <Input
-                type='text'
-                name='adresse'
-                value={values.adresse}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-            </Box>
-
-            <Spacer />
-
-            <Box sx={{ display: 'flex', flexDir: 'row', flex: '5', alignItems: 'self-start' }} className='light'>
-              <FormControl isRequired>
-                <FormLabel>PLZ</FormLabel>
-                <Input
-                type='text'
-                name='plz'
-                value={values.plz}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-            </Box>
-
-            <Spacer />
-
-            <Box sx={{ display: 'flex', flexDir: 'row', flex: '5', alignItems: 'self-start' }} className='light'>
-              <FormControl isRequired >
-                <FormLabel>Ort</FormLabel>
-                <Input
-                type='text'
-                name='ort'
-                value={values.ort}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-            </Box>
-
-          </Flex>
-        </Flex>
-
-        <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
-          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
-
-            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%" }} className='light'>
-              <FormControl isRequired>
-                <FormLabel>E-Mail</FormLabel>
-                <Input
-                type='email'
-                name='email'
-                value={values.email}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-            </Box>
-
-            <Spacer />
-
-            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%"  }} className='light'>
-              <FormControl>
-                <FormLabel>Telefon / Mobil</FormLabel>
-                <Input
-                type='tel'
-                name='telefon'
-                value={values.telefon}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-            </Box>
-
-          </Flex>
-        </Flex>
-
-        <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
-          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
-
-            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%" }} className='light'>
-              <FormControl isRequired>
-                <FormLabel>Vorname des Kindes</FormLabel>
-                <Input
-                type='text'
-                name='child'
-                value={values.child}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-            </Box>
-
-            <Spacer />
-
-            <Box sx={{ display: 'flex', flexDir: 'row', flex: '10', alignItems: 'self-start', w:"100%"  }} className='light'>
-              <FormControl>
-                <FormLabel>Geburtsdatum</FormLabel>
-                <Input
-                type='date'
-                name='geburtsdatum'
-                value={values.geburtsdatum}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-            </Box>
-
-          </Flex>
-        </Flex>
-
-        <FormControl sx={{paddingY: '1rem'}}>
-                <FormLabel>Hinterlasse deine Nachricht</FormLabel>
-                <Textarea
-                name='nachricht'
-                value={values.nachricht}
-                onChange={handleChange}
-                bg='w'
-                />
-              </FormControl>
-
-              <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
-          <Flex flexDir={isSmallScreen ? 'column-reverse' : 'row'} sx={{ paddingY: '1rem', display: 'flex', width: '100%', alignItems: 'self-start' }} className='light'>
-
-         
-          <Text
-            noOfLines={2}
-            bgGradient='linear(to-l, #7A59CA, #E6175B)'
-            bgClip='text'
-            className={gochi.className}
-            fontSize='4xl'
-            align={'left'}
-          >
-            Lass uns Musik machen!
-          </Text>
-
-
-            <Spacer />
+        <Flex justifyContent={'center'} alignItems={'center'} flexDir={isSmallScreen ? 'column' : 'row'} my={'2rem'}>
+            <Text
+              noOfLines={2}
+              bgGradient='linear(to-l, #7A59CA, #E6175B)'
+              bgClip='text'
+              className={gochi.className}
+              fontSize='4xl'
+              align={'center'}
+              mx={'1rem'}
+            >
+              Lass uns Musik machen!
+            </Text>
 
             <Button
-                  colorScheme='purple'
-                  variant='solid'
-                  borderRadius={"1.5rem"}
-                  height={"3rem"}
-          isLoading={isLoading}
-          disabled={
-            !values.name || !values.email || !values.kurse || !values.child
-          }
-          onClick={onSubmit}
-        >
-          Absenden
-        </Button>
+              colorScheme='purple'
+              variant='solid'
+              borderRadius={"1.5rem"}
+              height={"3rem"}
+              isLoading={isLoading}
+              disabled={
+                values.name != ''|| !values.email || !values.kurse || !values.child
+              }
+              onClick={onSubmit}
+              mx={'5rem'}
+            >
+            Absenden
+            </Button>
 
           </Flex>
-        </Flex>
-
-
-
       </Container>
     </Box>
   )

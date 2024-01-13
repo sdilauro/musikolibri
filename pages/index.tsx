@@ -1,5 +1,5 @@
-import { Box, Button, Center, Flex, Image, Stack, Text, useMediaQuery } from '@chakra-ui/react'
-import { gochi, maxWidth, oswald } from '../config/config'
+import { Box, Button, Image, Stack, Text, useMediaQuery } from '@chakra-ui/react';
+import { gochi, maxWidth, oswald } from '../config/config';
  
 export default function HomePage() {
   const [isSmallScreen] = useMediaQuery(maxWidth);
