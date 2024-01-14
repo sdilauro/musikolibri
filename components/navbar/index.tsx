@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { Gochi_Hand, Oswald } from 'next/font/google'
 import { maxWidth, navBarPages } from '../../config/config';
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
  
 

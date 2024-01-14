@@ -1,4 +1,4 @@
-import { Text, useToast, Container, Heading, FormControl, FormLabel, Select, FormErrorMessage, Input, Button, Textarea } from "@chakra-ui/react"
+import { Text, useToast, Container, Heading, FormControl, FormLabel, Select, FormErrorMessage, Input, Button, Textarea, LightMode, Box } from "@chakra-ui/react"
 import { useState, useEffect } from "react"
 import { sendKontakt, sendKontaktToAdmin } from "../lib/api"
 
@@ -63,7 +63,8 @@ export default function KontaktPage() {
   }
 
   return (
-    <Container maxW="450px" mt={12}>
+    <Box sx={{ w: '100%' }} className='light'>
+    <Container maxW="450px" mt={12} >
       <Heading>Contact</Heading>
       {error && (
         <Text color="red.300" my={4} fontSize="xl">
@@ -109,18 +110,20 @@ export default function KontaktPage() {
         <FormErrorMessage>Required</FormErrorMessage>
       </FormControl>
 
-          <Button
-              
-        variant="outline"
-        colorScheme="blue"
-        isLoading={isLoading}
-        disabled={
-          !values.name || !values.email || !values.message
-        }
-        onClick={onSubmit}
-      >
-        Submit
-      </Button>
+      <Button
+          colorScheme='purple'
+          variant='solid'
+          borderRadius={"1.5rem"}
+          height={"3rem"}
+          isLoading={isLoading}
+          disabled={
+            !values.name || !values.email || !values.message
+          }
+          onClick={onSubmit}
+        >
+          Absenden
+        </Button>
     </Container>
+    </Box>
   )
 }

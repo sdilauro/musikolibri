@@ -4,7 +4,7 @@ import { mailOptions, transporter } from "../../config/nodemailer";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method = 'POST') {
         const data = req.body
-        if (!data.email || !data.name || !data.kurse) {
+        if (!data.name || !data.email || !data.kurse || !data.child || !data.adresse || !data.geburtsdatum || !data.ort || !data.plz || !data.telefon || !data.vorname) {
             return res.status(400).json({message: "Bad request"})
       }
      
@@ -13,7 +13,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         kurses: Array<kurseProps>,
         rows: Array<rowProps>
     }
-
+ 
     type kurseProps = { name: string, schedule: string, days:string, color:string, id:string }
 
     type rowProps = { name: string, schedule: string, days:string, color:string, id:string }

@@ -15,8 +15,8 @@ export const footerPages: Array<link> = [
 ]
 
 export type kurses_file = { kurses: Array<kurse>, rows: Array<row> }
-export type kurse = { name: string, schedule: string, days:string, color:string, id:number }
-export type row = { name: string, schedule: string, days: string, color: string, id: string }
+export type kurse = { name: string, schedule: string, days: string, color: string, id: number }
+export type row = { name: string, weekday: string, schedule: string, days: string, color: string, id: string }
 
 export const gochi = Gochi_Hand({
     weight: '400',

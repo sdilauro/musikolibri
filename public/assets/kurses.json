@@ -37,59 +37,75 @@
     "rows":[
         {
             "name": "Frühling - Gruppe I",
+            "weekday": "Donnerstag",
             "schedule": "15:30 - 16:10",
             "days": "01.02., 08.02., 15.02., 22.02., 29.02., 07.03., 14.03., 21.03.",
             "color":"dark",
-            "id":"fruhling"
+            "id":"fruhling",
+            "num": "1"
         },
         {
             "name": "Frühling - Gruppe II",
+            "weekday": "Donnerstag",
             "schedule": "16:15 - 16:55",
             "days": "01.02., 08.02., 15.02., 22.02., 29.02., 07.03., 14.03., 21.03.",
             "color":"dark",
-            "id":"fruhling"
+            "id":"fruhling",
+            "num": "2"
         },
         {
             "name": "Sommer - Gruppe I",
+            "weekday": "Donnerstag",
             "schedule": "15:30 - 16:10",
             "days": "11.04., 18.04., 25.04., 02.05., 16.05., 23.05., 06.06., 13.06., 20.06., 27.06., 04.07.",
             "color":"light",
-            "id":"sommer"
+            "id":"sommer",
+            "num": "3"
         },
         {
             "name": "Sommer - Gruppe II",
+            "weekday": "Donnerstag",
             "schedule": "16:15 - 16:55",
             "days": "11.04., 18.04., 25.04., 02.05., 16.05., 23.05., 06.06., 13.06., 20.06., 27.06., 04.07.",
             "color":"light",
-            "id":"sommer"
+            "id":"sommer",
+            "num": "4"
         },
         {
             "name": "Herbst - Gruppe I",
+            "weekday": "Donnerstag",
             "schedule": "15:30 - 16:10",
             "days": "22.08., 29.08., 05.09., 12.09., 19.09., 26.09., 10.10., 31.10.",
             "color":"dark",
-            "id":"herbost"
+            "id":"herbost",
+            "num": "5"
         },
         {
             "name": "Herbst - Gruppe II",
+            "weekday": "Donnerstag",
             "schedule": "16:15 - 16:55",
             "days": "22.08., 29.08., 05.09., 12.09., 19.09., 26.09., 10.10., 31.10.",
             "color":"dark",
-            "id":"herbost"
+            "id":"herbost",
+            "num": "6"
         },
         {
             "name": "Winter - Gruppe I",
+            "weekday": "Donnerstag",
             "schedule": "15:30 - 16:10",
             "days": "07.11., 14.11., 21.11., 28.11., 05.12., 12.12., 19.12.",
             "color":"light",
-            "id":"winter"
+            "id":"winter",
+            "num": "7"
         },
         {
             "name": "Winter - Gruppe II",
+            "weekday": "Donnerstag",
             "schedule": "16:15 - 16:55",
             "days": "07.11., 14.11., 21.11., 28.11., 05.12., 12.12., 19.12.",
             "color":"light",
-            "id":"winter"
+            "id":"winter",
+            "num": "8"
         }
     ]
 }

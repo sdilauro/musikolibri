@@ -7,7 +7,7 @@ export const sendAnmeldung = async (data: any) => fetch('/api/anmeldung', {
     }
 })
 
-export const sendAnmeldungToAdmin = async (data: any) => fetch('/api/beratung', {
+export const sendAnmeldungToAdmin = async (data: any) => fetch('/api/anmeldung-to-admin', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
