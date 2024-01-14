@@ -1,5 +1,6 @@
-import { FormControl, FormLabel, Input, Box } from "@chakra-ui/react";
+import { FormControl, FormLabel, Input, Box, FormErrorMessage } from "@chakra-ui/react";
 import { ChangeEventHandler, HTMLInputTypeAttribute } from "react";
+
 
 type formFieldProps = { title: string
     type?: HTMLInputTypeAttribute
@@ -9,7 +10,8 @@ type formFieldProps = { title: string
     onChange?: ChangeEventHandler<HTMLInputElement>
     flex?:number}
 
-function FormField(props:formFieldProps) {
+function FormField(props: formFieldProps) {
+    
         return (
             <Box sx={{ m: '0.5rem', display: 'flex', flexDir: 'row', flex:props.flex?props.flex:1, alignItems: 'self-start' }}>
                 <FormControl isRequired={props.isRequired}>

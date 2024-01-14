@@ -1,7 +1,7 @@
 import { Box, Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, Select, Text, useMediaQuery, useToast, Flex, FormHelperText, Spacer, Textarea, ThemeProvider, LightMode } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { sendAnmeldung, sendAnmeldungToAdmin } from '../lib/api';
-import { maxWidth } from "../config/config";
+import { kurses_file, maxWidth, row } from "../config/config";
 import { Gochi_Hand } from 'next/font/google';
 import FormField from '../components/form-field';
 
@@ -25,15 +25,8 @@ const gochi = Gochi_Hand({
 })
 
 export default function AnmeldungFormPage() {
-  type kurses_file = {
-    kurses: Array<kurse>,
-    rows: Array<row>
-  }
+
   const [isSmallScreen] = useMediaQuery(maxWidth);
-  type kurse = { name: string, schedule: string, days: string, color: string, id: number }
-  type row = { name: string, weekday: string, schedule: string, days: string, color: string, id: string }
-
-
   const toast = useToast();
   const [state, setState] = useState(initState);
 
@@ -76,7 +69,10 @@ export default function AnmeldungFormPage() {
     }));
     try {
       await sendAnmeldung(values);
-      //setState(initState);
+      setState((prev) => ({
+        ...prev,
+        isLoading: false,
+      }));
       toast({
         title: "Message sent.",
         status: "success",
@@ -202,8 +198,8 @@ export default function AnmeldungFormPage() {
               borderRadius={"1.5rem"}
               height={"3rem"}
               isLoading={isLoading}
-              disabled={
-                values.name != ''|| !values.email || !values.kurse || !values.child
+              isDisabled={
+                !values.name || !values.email || !values.kurse || !values.child || !values.adresse || !values.geburtsdatum || !values.ort || !values.plz || !values.telefon || !values.vorname
               }
               onClick={onSubmit}
               mx={'5rem'}
