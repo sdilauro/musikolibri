@@ -102,6 +102,7 @@ export default function AnmeldungFormPage() {
         error: error.message,
       }));
     }
+    window.location.href = '/danke';
   }
 
   return (
@@ -202,6 +203,7 @@ export default function AnmeldungFormPage() {
                 !values.name || !values.email || !values.kurse || !values.child || !values.adresse || !values.geburtsdatum || !values.ort || !values.plz || !values.telefon || !values.vorname
               }
               onClick={onSubmit}
+              
               mx={'5rem'}
             >
             Absenden
