@@ -116,14 +116,14 @@ export default function HomePage() {
                 name="Gruppe I"
                 alter="4 bis 18 Mo."
                 imageSource="/assets/gruppe-i.jpg"
-                link=""
+                link="/gruppen#1"
                 id={"gruppe-i"}
               />
                             <AlterCard
                 name="Gruppe II"
                 alter="19 bis 36 Mo."
                 imageSource="/assets/gruppe-ii.jpg"
-                link=""
+                link="/gruppen#2"
                 id={"gruppe-ii"}
               />
               </Flex>

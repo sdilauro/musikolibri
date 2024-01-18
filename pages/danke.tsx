@@ -1,10 +1,6 @@
-import { Box, Flex, Image, List, ListIcon, ListItem, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Image, Text, useMediaQuery } from "@chakra-ui/react";
 import { Gochi_Hand } from 'next/font/google';
-import { IoMdMusicalNote } from "react-icons/io";
-import DatedParagraphBig from "../components/dated-paragraph-big";
 import { maxWidth } from "../config/config";
-import 'public/assets/timeline.json'
-import DatedParagraphSmall from "../components/dated-paragraph-small";
 
 const gochi = Gochi_Hand({
     weight: '400',

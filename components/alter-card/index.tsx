@@ -18,8 +18,8 @@ const AlterCard = (props: AlterCardProps) => {
     const [isSmallScreen] = useMediaQuery(maxWidth);
 
     return (
-        <Link href={props.link}>
-            <Card maxW='md' backgroundColor={'#F5EEE6'} borderRadius={'lg'} padding={isSmallScreen ? '1rem' : '1rem'} margin='2rem' width={'500px'} maxWidth={'80%'} key={props.id}>
+        <Link href={props.link} style={{ textDecoration: 'none' }}>
+            <Card maxW='md' backgroundColor={'#F5EEE6'} borderRadius={'lg'} padding={isSmallScreen ? '1rem' : '1rem'} margin='2rem' minWidth={'20%'} maxWidth={'80%'} key={props.id}>
 
                 <CardBody>
                     <Image
