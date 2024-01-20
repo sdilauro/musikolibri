@@ -80,7 +80,7 @@ export default function KontaktPage() {
   }
 
   return (
-    <Box sx={{ w: '100%' }} className='light'>
+    <Box sx={{ w: '100%', flex:1, minH:'100vh', alignItems: 'flex-start' }} className='light' >
       <Container maxW="650px" mt={12}>
         <Box sx={{ paddingY: '2rem', paddingBottom: '3rem', display: 'flex', flexDir: 'column' }}>
           <Text
