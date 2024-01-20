@@ -20,7 +20,7 @@ export default function AnmeldungPage() {
 
     type kurse = { name: string, schedule: string, days:string, color:string, id:number }
 
-    type row = { name: string, weekday:string, schedule: string, days:string, color:string, id:string, num:string }
+    type row = { name: string, weekday:string, schedule: string, days:string, color:string, id:string, num:string, isFull:boolean }
 
     const contents:kurses_file = require('public/assets/kurses.json');
     const data = contents.rows
@@ -38,6 +38,7 @@ export default function AnmeldungPage() {
                     color={item.color}
                     num={item.num}
                     weekday={item.weekday}
+                    isFull={item.isFull}
                     />
                 ))
             } 

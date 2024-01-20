@@ -139,7 +139,7 @@ export default function AnmeldungFormPage() {
               bg='#f6f6f6'
             >
               {data.map((item: row, index: number) => (
-                <option color='#f6f6f6' value={index + 1} key={index} > {item.name}, {item.weekday} - {item.schedule} </option>
+                <option color='#f6f6f6' value={index + 1} key={index} disabled={item.isFull} > {item.name}, {item.weekday} - {item.schedule} {item.isFull?' - Voller Kurs':''} </option>
               ))
               }
             </Select>

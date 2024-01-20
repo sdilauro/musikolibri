@@ -19,7 +19,7 @@ const firaCode = Fira_Code({
     subsets: ['latin'],
   })
    
-type GruppeItemProps = { name: string, weekday: string, schedule: string, days:string, color:string, id:string, num:string }
+type GruppeItemProps = { name: string, weekday: string, schedule: string, days:string, color:string, id:string, num:string, isFull:boolean }
 
 
 const GruppeItem = (props:GruppeItemProps) => {
@@ -51,8 +51,8 @@ const GruppeItem = (props:GruppeItemProps) => {
                     <Text mx={'3rem'} className={oswald.className} fontSize={isSmallScreen?'18':'24'} flex={1}>{props.days}</Text>
 
                     <Link style={{ textDecoration: 'none' }} href={`/anmeldung-form#${props.num}`}>
-                        <Button paddingX='2rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} mx={'3rem'} my={'1rem'} >
-                            <Text className={gochi.className} fontSize={isSmallScreen?'18':'24'}>Auswählen</Text>    
+                        <Button paddingX='2rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} mx={'3rem'} my={'1rem'} isDisabled={props.isFull} >
+                            <Text className={gochi.className} fontSize={isSmallScreen?'18':'24'}>{props.isFull?'Voller Kurs':'Auswählen'}</Text>    
                         </Button>
                     </Link>
                 </Box>
