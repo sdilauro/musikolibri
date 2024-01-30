@@ -1,6 +1,17 @@
-import { Box, Button, Flex, Image, Stack, Text, useMediaQuery } from '@chakra-ui/react';
+import { Box, Button, Flex, Image, List, ListIcon, ListItem, Stack, Text, useMediaQuery } from '@chakra-ui/react';
 import { gochi, maxWidth, oswald } from '../config/config';
 import AlterCard from "../components/alter-card";
+import { IoMdMusicalNote } from "react-icons/io";
+
+const addLineBreak = (str: string) =>
+  str.split('\n').map((subStr) => {
+    return (
+      <>
+        {subStr}
+        <br />
+      </>
+    );
+  });
 
 export default function HomePage() {
   const [isSmallScreen] = useMediaQuery(maxWidth);
@@ -109,24 +120,33 @@ export default function HomePage() {
                 />
               }
             </Box>
-            
+
           </Box>
-          <Flex className="dark" alignItems={isSmallScreen?'center':'self-start'} flexDir={isSmallScreen?'column':'row' } >
-              <AlterCard
-                name="Gruppe I"
-                alter="4 bis 18 Mo."
-                imageSource="/assets/gruppe-i.jpg"
-                link="/gruppen#1"
-                id={"gruppe-i"}
-              />
-                            <AlterCard
-                name="Gruppe II"
-                alter="19 bis 36 Mo."
-                imageSource="/assets/gruppe-ii.jpg"
-                link="/gruppen#2"
-                id={"gruppe-ii"}
-              />
-              </Flex>
+          <Box sx={{ display: 'flex', flexDir: 'column', flex: '0.5', alignItems: 'self-end' }} className='dark'>
+          <Text
+            marginTop={'-2.5rem'}
+            fontSize={isSmallScreen ? '18' : '24'}>
+            {addLineBreak("Musikolibri möchte Eltern und Kindern die nötigen Werkzeuge an die Hand geben, damit sie als Familie selbst Musik machen können, wo, wann und wie sie wollen. Es ist ein Raum, der dazu einlädt, eine Welt voller rhythmischer und klanglicher Möglichkeiten zu entdecken, die das aktive Lernen der Kinder durch spielerische und kreative Aktivitäten wie Singen, Tanzen und Improvisieren mit Musikinstrumenten fördert.\n\n Die Eltern bzw. die Bezungspersonen spielen eine wichtige Rolle, da sie aktiv an allen Aktivitäten teilnehmen. Auf diese Weise wird die Bindung zur kleinen Maus gestärkt und das Selbstvertrauen und Selbstwertgefühl des Kindes gesteigert.")}
+          </Text>
+          </Box>
+          <Flex className="dark" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'} >
+            <AlterCard
+              name="Gruppe I"
+              alter="4 bis 18 Mo."
+              imageSource="/assets/gruppe-i.jpg"
+              link="/gruppen#1"
+              id={"gruppe-i"}
+            />
+            <AlterCard
+              name="Gruppe II"
+              alter="19 bis 36 Mo."
+              imageSource="/assets/gruppe-ii.jpg"
+              link="/gruppen#2"
+              id={"gruppe-ii"}
+            />
+          </Flex>
+
+
         </Box>
       </Box>
     </>

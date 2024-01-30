@@ -40,11 +40,6 @@ const GruppeItem = (props:GruppeItemProps) => {
                     bgClip='text'> 
                     {props.name} 
                 </Text>
-                <Text 
-                    fontSize={isSmallScreen?'21':'28'} 
-                    className={firaCode.className}>
-                    Termin
-                </Text>
                 <Box display={'flex'} flexDir={isSmallScreen?'column':'row'} alignItems={'center'} my={'1rem'} width={'100%'}>
                     <Text mx={'3rem'} className={oswald.className} fontSize={isSmallScreen?'18':'24'} >{props.weekday}</Text>
                     <Text mx={'3rem'} className={oswald.className} fontSize={isSmallScreen?'18':'24'} noOfLines={1} textAlign={'center'}>{props.schedule}</Text>
@@ -52,7 +47,7 @@ const GruppeItem = (props:GruppeItemProps) => {
 
                     <Link style={{ textDecoration: 'none' }} href={`/anmeldung-form#${props.num}`}>
                         <Button paddingX='2rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} mx={'3rem'} my={'1rem'} isDisabled={props.isFull} >
-                            <Text className={gochi.className} fontSize={isSmallScreen?'18':'24'}>{props.isFull?'Voller Kurs':'Auswählen'}</Text>    
+                            <Text className={gochi.className} fontSize={isSmallScreen?'18':'24'}>{props.isFull?'Ausgebucht':'Auswählen'}</Text>    
                         </Button>
                     </Link>
                 </Box>
