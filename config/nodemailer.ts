@@ -2,6 +2,7 @@ import nodemailer from 'nodemailer'
 
 const email = process.env.NM_EMAIL
 const pass = process.env.NM_PASS
+const email_as = process.env.NM_EMAIL_AS
 
 export const transporter = nodemailer.createTransport(
     {
@@ -14,5 +15,5 @@ export const transporter = nodemailer.createTransport(
 )
 
 export const mailOptions = {
-    from:email,
+    from:'Anabela von Musikolibri <'+email_as+'>'
 }
