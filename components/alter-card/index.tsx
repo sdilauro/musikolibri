@@ -19,7 +19,7 @@ const AlterCard = (props: AlterCardProps) => {
 
     return (
         <Link href={props.link} style={{ textDecoration: 'none' }}>
-            <Card maxW='md' backgroundColor={'#F5EEE6'} borderRadius={'lg'} padding={isSmallScreen ? '1rem' : '1rem'} margin='2rem' minWidth={'20%'} maxWidth={'80%'} key={props.id}>
+            <Card maxW='md' backgroundColor={'#f4e4dc'} borderRadius={'lg'} padding={isSmallScreen ? '1rem' : '1rem'} margin='2rem' minWidth={'20%'} maxWidth={'80%'} key={props.id}>
 
                 <CardBody>
                     <Image

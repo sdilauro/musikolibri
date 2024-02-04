@@ -3,13 +3,7 @@
 import React, { useEffect } from 'react';
 import { Box, Flex, List, ListIcon, ListItem, Text, useMediaQuery } from "@chakra-ui/react";
 import { IoMdMusicalNote } from "react-icons/io";
-import { Gochi_Hand } from 'next/font/google';
-import { maxWidth } from "../config/config";
-
-const gochi = Gochi_Hand({
-    weight: '400',
-    subsets: ['latin'],
-})
+import { gochi, maxWidth, oswald } from '../config/config';
 
 const addLineBreak = (str: string) =>
     str.split('\n').map((subStr) => {
@@ -36,7 +30,7 @@ export default function GruppePage() {
                     fontSize={isSmallScreen ? '4xl' : '5xl'}
                     align={'center'}
                 >
-                    Die Workshops
+                    Die Gruppen
                 </Text>
 
             </Box>
@@ -61,7 +55,8 @@ export default function GruppePage() {
                     </Text>
                     <Text
                         marginBottom={'-0.5rem'}
-                        fontSize={isSmallScreen ? '18' : '24'}>
+                        fontSize={isSmallScreen ? '18' : '20'}
+                        className={oswald.className}>
                         {addLineBreak("Dies ist eine Gruppe für die Kleinsten und ihren Eltern, die gemeinsam mit den Kindern musizieren. \n\n Schon im Mutterleib gewöhnt sich das Baby an den Herzschlag und die Stimme der Mutter. Je älter das Baby wird, desto mehr nimmt es die Geräusche seiner Umgebung wahr. Sie hören Musik und werden, ohne es zu merken, musikalisch geboren. Rhythmus und Melodie werden uns schon vor der Geburt in die Wiege gelegt und begleiten uns ein Leben lang. Deshalb kann Musik eine so große Wirkung auf Kinder und ihre Gefühle haben. \n\n Während des Kurses werdet Ihr sehen und fühlen, wie Eure kleine Maus auf Musik reagiert. Ihr erlernt und/oder erweitert Euer Repertoire, um Euer Baby mit verschiedenen Liedern zum Entspannen, Aktivieren, Lachen und Genießen einzuladen.\n\n Kinder lernen durch Imitation, und wenn sie sehen, dass Ihre Eltern aktiv sind und Spaß an der Bewegung haben, motiviert das sie, selbst Musik zu machen und sich zu bewegen. Auf diese Weise wird die Bindung zur kleinen Maus gestärkt und das Selbstvertrauen und Selbstwertgefühl des Kindes gesteigert.")}
                     </Text>
                     <Text
@@ -72,7 +67,7 @@ export default function GruppePage() {
                         bgClip='text'>
                         {addLineBreak("\n\Zu den Aktivitäten gehören, unter anderem: \n")}
                     </Text>
-                    <List p={2} fontSize={isSmallScreen ? '18' : '24'} textAlign={'left'}>
+                    <List p={2} fontSize={isSmallScreen ? '18' : '20'} className={oswald.className} textAlign={'left'}>
                         <ListItem>
                             <ListIcon as={IoMdMusicalNote} color='#E6175B' />
                             Lieder zur körperlichen Bindung des Babys
@@ -121,9 +116,9 @@ export default function GruppePage() {
                         className={gochi.className}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'
                         bgClip='text'>
-                        {addLineBreak("\n\Was braucht Ihr für den Kurs?: \n")}
+                        {addLineBreak("\n\Was braucht Ihr für den Kurs? \n")}
                     </Text>
-                    <List p={2} fontSize={isSmallScreen ? '18' : '24'} textAlign={'left'}>
+                    <List p={2} fontSize={isSmallScreen ? '18' : '20'} className={oswald.className} textAlign={'left'}>
                         <ListItem>
                             <ListIcon as={IoMdMusicalNote} color='#E6175B' />
                             Eine Decke für das Baby
@@ -145,7 +140,8 @@ export default function GruppePage() {
                     <Text
                     marginTop={'1rem'}
                         marginBottom={'-0.5rem'}
-                        fontSize={isSmallScreen ? '18' : '24'}>
+                        fontSize={isSmallScreen ? '18' : '20'}
+                        className={oswald.className}>
                         {addLineBreak("* Nach der Anmeldung erhaltet Ihr per E-Mail die Texte der Lieder, die wir im Kurs gemeinsam singen werden. \n ** Wenn ihr diese Instrumente nicht zu Hause habt, gebe ich Euch gerne Tipps, wo Ihr sie kaufen könnt.")}
                     </Text>
                 </Flex>
@@ -171,15 +167,66 @@ export default function GruppePage() {
                     </Text>
                     <Text
                         marginBottom={'-0.5rem'}
-                        fontSize={isSmallScreen ? '18' : '24'}>
-                        {addLineBreak("Diese Gruppe ist für Kinder von 19 bis 36 Monaten geeignet. Jedes Kind sollte immer von einem Erwachsenen wie zum Beispiel Mama, Papa, Oma oder Opa begleitet werden. \n\n Musikolibri möchte Eltern und Kindern die nötigen Werkzeuge an die Hand geben, damit sie als Familie selbst Musik machen können, wo, wann und wie sie wollen. Es ist ein Raum, der dazu einlädt, eine Welt voller rhythmischer und klanglicher Möglichkeiten zu entdecken, die das aktive Lernen der Kinder durch spielerische und kreative Aktivitäten wie Singen, Tanzen und Improvisieren mit Musikinstrumenten fördert.\n\n Die Eltern bzw. die Bezungspersonen spielen eine wichtige Rolle, da sie aktiv an allen Aktivitäten teilnehmen. Auf diese Weise wird die Bindung zur kleinen Maus gestärkt und das Selbstvertrauen und Selbstwertgefühl des Kindes gesteigert.")}
+                        fontSize={isSmallScreen ? '18' : '20'}
+                        className={oswald.className}>
+                        {addLineBreak("Dies ist eine Gruppe für Kleinkinder von 19 bis 36 Monaten und ihren Eltern, die gemeinsam mit den Kindern musizieren. \n\n Schon das Musikhören fördert die Entwicklung des Gehirns. Noch mehr aber fördert es Säuglinge und Kleinkinder, wenn sie selbst musizieren oder Bewegungsspiele mit Rasseln oder Klanghölzern machen. Denn dabei werden nicht nur die Feinmotorik (z.B. Greifen und Drücken von Gegenständen), sondern auch sprachliche und mathematische Fähigkeiten (z.B. beim Zählen von Takten) sowie die Kreativität gefordert - mehrere Gehirnbereiche werden gleichzeitig beansprucht. \n\n Wenn kleine Kinder spielerisch mit anderen interagieren, werden die positiven Effekte des Musikhörens noch verstärkt. Auch Persönlichkeitsmerkmale wie Freundlichkeit und Kooperationsbereitschaft werden auf diese Weise unterstützt.\n\n Dieser Kurs bietet Aktivitäten, die dem Alter und den Bedürfnissen der Kinder angepasst sind, um ihre Entwicklung zu fördern und einen Raum des Vertrauens zu schaffen, in dem Bindungen gestärkt werden. Singen und Tanzen, Orff-Instrumente und bunte Tücher, Musikhören und Improvisation begleiten uns durch diese magische musikalische Erfahrung.\n\n Imitation ist für das Lernen von Kindern von grundlegender Bedeutung, und wenn Kinder sehen, dass ihre Eltern aktiv sind und Freude an Bewegung und Musik haben, motiviert sie das, ebenfalls aktiv zu sein. Dies stärkt die Bindung zum Kind und steigert sein Selbstvertrauen und Selbstwertgefühl.")}
                     </Text>
                     <Text
-                        marginBottom={'-2.5rem'}
-                        fontSize={isSmallScreen ? '18' : '24'}>
-                        {addLineBreak("\n\Was braucht ihr für den Kurs?: \n")}
+                        marginBottom={'-3.5rem'}
+                        fontSize={isSmallScreen ? '24' : '36'}
+                        className={gochi.className}
+                        bgGradient='linear(to-l, #7A59CA, #E6175B)'
+                        bgClip='text'>
+                        {addLineBreak("\n\Zu den Aktivitäten gehören, unter anderem: \n")}
                     </Text>
-                    <List p={2} fontSize={isSmallScreen ? '18' : '24'} textAlign={'left'}>
+                    <List p={2} fontSize={isSmallScreen ? '18' : '20'} className={oswald.className} textAlign={'left'}>
+                        <ListItem>
+                            <ListIcon as={IoMdMusicalNote} color='#E6175B' />
+                            Lieder zur körperlichen Bindung des Kindes
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={IoMdMusicalNote} color="#E6175B" />
+                            Lieder zur Körpererfahrung
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={IoMdMusicalNote} color="#E6175B" />
+                            Kniereiter
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={IoMdMusicalNote} color="#E6175B" />
+                            Fingerspiele
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={IoMdMusicalNote} color="#E6175B" />
+                            Tanzen und Bewegen
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={IoMdMusicalNote} color="#E6175B" />
+                            Singen
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={IoMdMusicalNote} color="#E6175B" />
+                            Echospiele
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={IoMdMusicalNote} color="#E6175B" />
+                            Instrumenten spielen und Musik hören
+                        </ListItem>
+                        <ListItem>
+                            <ListIcon as={IoMdMusicalNote} color="#E6175B" />
+                            Improvisation
+                        </ListItem>
+
+                    </List>
+                    <Text
+                        marginBottom={'-3.5rem'}
+                        fontSize={isSmallScreen ? '24' : '36'}
+                        className={gochi.className}
+                        bgGradient='linear(to-l, #7A59CA, #E6175B)'
+                        bgClip='text'>
+                        {addLineBreak("\n\Was braucht Ihr für den Kurs? \n")}
+                    </Text>
+                    <List p={2} fontSize={isSmallScreen ? '18' : '20'} className={oswald.className} textAlign={'left'}>
                         <ListItem>
                             <ListIcon as={IoMdMusicalNote} color='#E6175B' />
                             Eine Decke für das Kind
@@ -194,11 +241,17 @@ export default function GruppePage() {
                         </ListItem>
                         <ListItem>
                             <ListIcon as={IoMdMusicalNote} color="#E6175B" />
-                            Musikinstrumente für Kinder (Holzrassel und Klanghölzer) und einen Nylontuch**
+                            Musikinstrumente für Kinder (Holzrassel und Klanghölzer) und einen Tanztuch**
                         </ListItem>
 
                     </List>
-                </Flex>
+                    <Text
+                    marginTop={'1rem'}
+                        marginBottom={'-0.5rem'}
+                        fontSize={isSmallScreen ? '18' : '20'}
+                        className={oswald.className}>
+                        {addLineBreak("* Nach der Anmeldung erhaltet Ihr per E-Mail die Texte der Lieder, die wir im Kurs gemeinsam singen werden. \n ** Wenn ihr diese Instrumente nicht zu Hause habt, gebe ich Euch gerne Tipps, wo Ihr sie kaufen könnt.")}
+                    </Text>               </Flex>
             </Box>
         </Box>
 
