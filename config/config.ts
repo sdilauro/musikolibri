@@ -4,7 +4,7 @@ type link = { name: string, route: string }
 
 export const navBarPages: Array<link> = [
     { name: 'Über mich', route: '/uber-mich' },
-    { name: 'Räumlichkeiten', route: '/raumlichkeiten' },
+    { name: 'Konzept', route: '/konzept' },
     { name: 'Termine & Preise', route: '/termine-und-preise' },
     { name: 'Kontakt', route: '/kontakt' }
 ]

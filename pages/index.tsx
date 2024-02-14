@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, List, ListIcon, ListItem, Stack, Text, useMediaQuery } from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Link, List, ListIcon, ListItem, Stack, Text, useMediaQuery } from '@chakra-ui/react';
 import { gochi, maxWidth, oswald } from '../config/config';
 import AlterCard from "../components/alter-card";
 import { IoMdMusicalNote } from "react-icons/io";
@@ -51,20 +51,30 @@ export default function HomePage() {
               Entdecke, wie Musik die Entwicklung deines Kindes fördern kann.
             </Text>
             <Stack direction='row' spacing={4} display={'flex'} justifyContent={'center'} marginY={'1rem'}>
+            <Link style={{ textDecoration: 'none' }} href={'/konzept'}>
               <Button
                 colorScheme='purple'
                 variant='outline'
                 borderRadius={"1.5rem"}
-                height={"3rem"}>
+                height={"3rem"}
+                className={gochi.className}
+                fontSize={'22px'}
+                fontWeight={400}>
                 Mehr Erfahren
               </Button>
+            </Link>
+            <Link style={{ textDecoration: 'none' }} href={'/anmeldung'}>
               <Button
                 colorScheme='purple'
                 variant='solid'
                 borderRadius={"1.5rem"}
-                height={"3rem"}>
+                height={"3rem"}
+                className={gochi.className}
+                fontSize={'22px'}
+                fontWeight={400}>
                 Jetzt Anmelden
               </Button>
+              </Link>
             </Stack>
           </Box>
         </Box>
@@ -82,7 +92,7 @@ export default function HomePage() {
                 textAlign={'left'}
                 sx={{ px: "0.5rem", marginTop: "1rem" }}
               >
-                Die Workshops
+                Die Musikkurse in Bochum
               </Text>
               <Text
                 className={oswald.className}
@@ -91,7 +101,7 @@ export default function HomePage() {
                 sx={{ fontcolor: "black", px: "0.5rem" }}
 
               >
-                {addLineBreak("Musikolibri lädt dich ein, deine kleine Maus bei ihren ersten Schritten in die Welt der Klänge, Rhythmen, Harmonien und Melodien zu begleiten und gemeinsam, Hand in Hand, einen wunderbaren musikalischen Weg zu entdecken. \n\n Mit den Musikolibri-Workshops kann die Musik\n")}
+                {addLineBreak("Musikolibri lädt Dich ein, deine kleine Maus bei ihren ersten Schritten in die Welt der Klänge, Rhythmen, Harmonien und Melodien zu begleiten und gemeinsam, Hand in Hand, einen wunderbaren musikalischen Weg zu entdecken. \n\n Mit den Musikolibri-Kursen kann die Musik\n")}
                 
               </Text>
               <List p={2} className={oswald.className} fontSize={isSmallScreen ? '18' : '20'} textAlign={'left'}>
@@ -114,8 +124,8 @@ export default function HomePage() {
               {isSmallScreen &&
                 <Image
                   marginTop='1rem'
-                  boxSize='30rem'
-                  src='/assets/piano.png'
+                  width='30rem'
+                  src='/assets/main_image.jpg'
                   alt='Piano'
                   fallbackSrc='https://via.placeholder.com/512'
                   borderRadius='35px'
@@ -125,8 +135,8 @@ export default function HomePage() {
               }
               {!isSmallScreen &&
                 <Image
-                  boxSize='30rem'
-                  src='/assets/piano.png'
+                  width='30rem'
+                  src='/assets/main_image.jpg'
                   alt='Piano'
                   fallbackSrc='https://via.placeholder.com/512'
                   borderRadius={'35px'}
@@ -170,21 +180,21 @@ export default function HomePage() {
                 sx={{ fontcolor: "black", px: "0.5rem" }}
                 marginInline={'2rem'}
               >
-                {addLineBreak("Die Workshops sind in zwei Gruppen unterteilt, wobei die Aktivitäten dem Alter und den Bedürfnissen der Kinder angepasst sind.")}
+                {addLineBreak("Die Kurse sind in zwei Gruppen unterteilt, wobei die Aktivitäten dem Alter und den Bedürfnissen der Kinder angepasst sind.")}
                 
               </Text>
         <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'} >
             <AlterCard
               name="Gruppe I"
               alter="4 bis 18 Mo."
-              imageSource="/assets/gruppe-i.jpg"
+              imageSource="/assets/gruppe_i.jpg"
               link="/gruppen#1"
               id={"gruppe-i"}
             />
             <AlterCard
               name="Gruppe II"
               alter="19 bis 36 Mo."
-              imageSource="/assets/gruppe-ii.jpg"
+              imageSource="/assets/gruppe_ii.jpg"
               link="/gruppen#2"
               id={"gruppe-ii"}
             />

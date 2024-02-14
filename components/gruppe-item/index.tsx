@@ -40,6 +40,12 @@ const GruppeItem = (props:GruppeItemProps) => {
                     bgClip='text'> 
                     {props.name} 
                 </Text>
+                <Text 
+                    marginBottom={'-0.5rem'}
+                    fontSize={isSmallScreen?'18':'24'} 
+                    className={oswald.className} > 
+                    Annastraße 27, 44793 Bochum
+                </Text>
                 <Box display={'flex'} flexDir={isSmallScreen?'column':'row'} alignItems={'center'} my={'1rem'} width={'100%'}>
                     <Text mx={'3rem'} className={oswald.className} fontSize={isSmallScreen?'18':'24'} >{props.weekday}</Text>
                     <Text mx={'3rem'} className={oswald.className} fontSize={isSmallScreen?'18':'24'} noOfLines={1} textAlign={'center'}>{props.schedule}</Text>

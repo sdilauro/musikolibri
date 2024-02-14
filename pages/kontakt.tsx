@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, FormControl, FormLabel, Text, Textarea, useMediaQuery, useToast } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, FormControl, FormLabel, Image, Text, Textarea, useMediaQuery, useToast } from "@chakra-ui/react";
 import { Gochi_Hand } from "next/font/google";
 import { useState } from "react";
 import FormField from "../components/form-field";
@@ -7,8 +7,9 @@ import { sendKontakt, sendKontaktToAdmin } from "../lib/api";
 
 const initValues = {
   email: '',
-  name: '', 
-  nachricht: '' }
+  name: '',
+  nachricht: ''
+}
 const initState = { isLoading: false, error: '', values: initValues }
 
 const gochi = Gochi_Hand({
@@ -80,7 +81,7 @@ export default function KontaktPage() {
   }
 
   return (
-    <Box sx={{ w: '100%', flex:1, minH:'100vh', alignItems: 'flex-start' }} className='light' >
+    <Box sx={{ w: '100%', flex: 1, minH: '100vh', alignItems: 'flex-start' }} className='light' >
       <Container maxW="650px" mt={12}>
         <Box sx={{ paddingY: '2rem', paddingBottom: '3rem', display: 'flex', flexDir: 'column' }}>
           <Text
@@ -102,56 +103,57 @@ export default function KontaktPage() {
           </Text>
         )}
 
-        
+
         <Flex alignItems={isSmallScreen ? 'stretch' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
-          <FormField name='name' type='text' title='Name' isRequired value={values.name} onChange={handleChange}/>
+          <FormField name='name' type='text' title='Name' isRequired value={values.name} onChange={handleChange} />
         </Flex>
 
         <Flex flexDir={isSmallScreen ? 'column' : 'row'} w={"100%"}>
           <FormField name='email' type='email' title='E-Mail' isRequired value={values.email} onChange={handleChange} />
         </Flex>
-        
-        <FormControl sx={{ p:"0.5rem"}} isRequired>
+
+        <FormControl sx={{ p: "0.5rem" }} isRequired>
           <FormLabel>Hinterlasse deine Nachricht</FormLabel>
           <Textarea
-            
+
             name='nachricht'
             value={values.nachricht}
             onChange={handleChange}
             bg='#f6f6f6'
-            />
+          />
         </FormControl>
 
         <Flex justifyContent={'center'} alignItems={'center'} flexDir={isSmallScreen ? 'column' : 'row'} my={'2rem'}>
-            <Text
-              noOfLines={2}
-              bgGradient='linear(to-l, #7A59CA, #E6175B)'
-              bgClip='text'
-              className={gochi.className}
-              fontSize='4xl'
-              align={'center'}
-              mx={'1rem'}
-            >
-              Lass uns Musik machen!
-            </Text>
+          <Text
+            noOfLines={2}
+            bgGradient='linear(to-l, #7A59CA, #E6175B)'
+            bgClip='text'
+            className={gochi.className}
+            fontSize='4xl'
+            align={'center'}
+            mx={'1rem'}
+          >
+            Lass uns Musik machen!
+          </Text>
 
-            <Button
-              colorScheme='purple'
-              variant='solid'
-              borderRadius={"1.5rem"}
-              height={"3rem"}
-              isLoading={isLoading}
-              isDisabled={
-                !values.name || !values.email || !values.nachricht
-              }
-              onClick={onSubmit}
-              
-              mx={'5rem'}
-            >
+          <Button
+            colorScheme='purple'
+            variant='solid'
+            borderRadius={"1.5rem"}
+            height={"3rem"}
+            isLoading={isLoading}
+            isDisabled={
+              !values.name || !values.email || !values.nachricht
+            }
+            onClick={onSubmit}
+
+            mx={'5rem'}
+          >
             Absenden
-            </Button>
+          </Button>
 
-          </Flex>
+        </Flex>
+
       </Container>
     </Box>
   )

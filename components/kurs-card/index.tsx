@@ -37,22 +37,22 @@ const KursCard = (props:KursCardProps) => {
                                 bgClip='text'> 
                                     {props.name} 
                                 </Text>
-                                <Text textColor={'black'}  fontSize={isSmallScreen?'28':'36'} className={oswald.className}>{props.startOn} / {props.finishOn}</Text>
+                                <Text textColor={'black'}  fontSize={isSmallScreen?'18':'20'} className={oswald.className}>{props.startOn} / {props.finishOn}</Text>
                             </Flex>
                             <Avatar name='Frühling' src={props.imageSource} size={'66'} />
                         </Flex>
-                        <Text textColor={'black'} fontSize={isSmallScreen?'36':'48'} className={oswald.className} textAlign={isSmallScreen?'center':'left'}>€{props.price}</Text>
+                        <Text textColor={'black'} fontSize={isSmallScreen?'24':'36'} className={oswald.className} textAlign={isSmallScreen?'center':'left'}>€{props.price}</Text>
                     </Box>
                 </Flex>
                 <Box display={'flex'} flexDir={'column'} alignItems={'center'} marginY={'1rem'}>
                     <Link href={`/anmeldung#${props.id}`}>
-                        <Button paddingX='1.5rem' colorScheme={'purple'}variant='solid' borderRadius={'1.5rem'} h={'3rem'}>
+                        <Button paddingX='1.5rem' colorScheme={'purple'}variant='solid' borderRadius={'1.5rem'} h={'3rem'} className={gochi.className} fontWeight={400} fontSize={24}>
                             Jetzt Anmelden
                         </Button>
                     </Link>
                 </Box>
                 {props.details.map((detail:string, index:number)=>(
-                    <Text textColor={'black'} className={oswald.className} fontSize={isSmallScreen?'28':'36'} key={index}>• {detail}</Text>
+                    <Text textColor={'black'} className={oswald.className} fontSize={isSmallScreen?'18':'20'} key={index}>• {detail}</Text>
                 ))}
             </CardBody>
         </Card>

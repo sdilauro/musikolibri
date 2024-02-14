@@ -38,7 +38,7 @@ const GruppeCard = (props:GruppeCardProps) => {
                             </Flex>
                             <Avatar marginLeft='1rem' name='Frühling' src={props.imageSource} size={'66px'} />
                         </Flex>
-                        <Text fontSize={'48px'} className={oswald.className}>€{props.price}</Text>
+                        <Text fontSize={'36px'} className={oswald.className}>€{props.price}</Text>
                     </Box>
                 </Flex>
                 <Box display={'flex'} flexDir={'column'} alignItems={'center'} marginY={'1rem'}>
@@ -47,7 +47,7 @@ const GruppeCard = (props:GruppeCardProps) => {
                     </Button>
                 </Box>
                 {props.details.map((detail:string, index:number)=>(
-                    <Text className={oswald.className} fontSize={'24px'} key={index}>• {detail}</Text>
+                    <Text className={oswald.className} fontSize={'20px'} key={index}>• {detail}</Text>
                 ))}
             </CardBody>
         </Card>

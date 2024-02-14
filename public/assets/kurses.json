@@ -2,10 +2,10 @@
     "cards": [
         {
             "name": "Frühling",
-            "price": 80,
+            "price": 60,
             "startOn": "Februar",
             "finishOn": "März", 
-            "details": ["Gruppe I & II","8 Termine à 40 Min","Inkl. Texte","Letzte Stunde Osterspezial"],
+            "details": ["Gruppe I & II","5 Termine à 40 Min","Inkl. Texte","Letzte Stunde Osterspezial"],
             "imageSource":"/assets/fruhling.png"
         },
         {
@@ -17,7 +17,7 @@
             "imageSource":"/assets/sommer.png"
         },
         {
-            "name": "Herbost",
+            "name": "Herbst",
             "price": 80,
             "startOn": "August",
             "finishOn": "Oktober", 
@@ -39,17 +39,17 @@
             "name": "Frühling - Gruppe I",
             "weekday": "Donnerstag",
             "schedule": "15:30 - 16:10",
-            "days": "01.02., 08.02., 15.02., 22.02., 29.02., 07.03., 14.03., 21.03.",
+            "days": "29.02., 07.03., 14.03., 21.03., 28.03.",
             "color":"dark",
             "id":"fruhling",
             "num": "1",
-            "isFull":true
+            "isFull":false
         },
         {
             "name": "Frühling - Gruppe II",
             "weekday": "Donnerstag",
             "schedule": "16:15 - 16:55",
-            "days": "01.02., 08.02., 15.02., 22.02., 29.02., 07.03., 14.03., 21.03.",
+            "days": "29.02., 07.03., 14.03., 21.03., 28.03.",
             "color":"dark",
             "id":"fruhling",
             "num": "2",

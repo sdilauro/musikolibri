@@ -11,16 +11,16 @@ export default function TermineUndPreisePage() {
                     name="Frühling"
                     startOn="Februar"
                     finishOn="März"
-                    price={80}
+                    price={60}
                     imageSource="/assets/fruhling.png"
-                    details={["Gruppe I & II","8 Termine à 40 Min","Inkl. Texte","Letzte Stunde Osterspezial"]}    
+                    details={["Eröffnungsspezial","Gruppe I & II","5 Termine à 40 Min","Inkl. Texte"]}    
                     id={"fruhling"}
                 />
                 <KursCard
                     name="Sommer"
                     startOn="April"
                     finishOn="Juni"
-                    price={110}
+                    price={132}
                     imageSource="/assets/sommer.png"
                     details={["Gruppe I & II","11 Termine à 40 Min","Inkl. Texte"]}
                     id={"sommer"}
@@ -28,10 +28,10 @@ export default function TermineUndPreisePage() {
             </Flex>
             <Flex className="light" alignItems={isSmallScreen?'center':'self-start'} flexDir={isSmallScreen?'column':'row'}>
                 <KursCard
-                    name="Herbost"
+                    name="Herbst"
                     startOn="August"
                     finishOn="Oktober"
-                    price={80}
+                    price={96}
                     imageSource="/assets/herbst.png"
                     details={["Gruppe I & II","8 Termine à 40 Min","Inkl. Texte"]}
                     id={"herbost"}
@@ -40,7 +40,7 @@ export default function TermineUndPreisePage() {
                     name="Winter"
                     startOn="November"
                     finishOn="Dezember"
-                    price={70}
+                    price={84}
                     imageSource="/assets/winter.png"
                     details={["Gruppe I & II","7 Termine à 40 Min","Inkl. Texte"]}
                     id={"winter"}

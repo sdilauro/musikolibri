@@ -8,6 +8,16 @@ import { maxWidth } from "../config/config";
 import 'public/assets/timeline.json'
 import DatedParagraphSmall from "../components/dated-paragraph-small";
 
+const addLineBreak = (str: string) =>
+    str.split('\n').map((subStr) => {
+        return (
+            <>
+                {subStr}
+                <br />
+            </>
+        );
+    });
+
 const gochi = Gochi_Hand({
     weight: '400',
     subsets: ['latin'],
@@ -37,6 +47,7 @@ export default function UberMichPage() {
                         className={gochi.className}
                         fontSize={isSmallScreen?'4xl':'5xl'}
                         align={'center'}
+                        marginTop='3rem'
                     >
                         Über mich
                     </Text>
@@ -72,6 +83,11 @@ export default function UberMichPage() {
                                 <ListIcon as={IoMdMusicalNote} color="#E6175B" />
                                 Bachelor of Music
                             </ListItem>
+                            <ListItem>
+                                <ListIcon as={IoMdMusicalNote} color="#E6175B" />
+                                Stud. Master Musiktherapie seit 2024
+                            </ListItem>
+                            
                         </List>
                         <Text
                             fontSize='1.25rem'
@@ -114,7 +130,7 @@ export default function UberMichPage() {
                         sx={{ fontcolor: "black" }}
                         textAlign='justify'
                     >
-                        Was mich mein ganzes Leben lang am meisten geprägt hat, ist das Unterrichten. Seit meinem 17. Lebensjahr unterrichte ich Klavier und genieße es jeden Tag ein bisschen mehr. Ich habe Schüler aller Altersstufen unterrichtet und war immer fasziniert von den Gemeinsamkeiten und Unterschieden zwischen meinen jüngeren und älteren Schülern.
+                         {addLineBreak("Ich widme mich der Förderung der Kreativität, der Entwicklung von Fähigkeiten, die spezifisch mit dem musikalischen Lernen verbunden sind, um die Tradition des Singens in der Familie und die ganzheitliche Entwicklung des Menschen zu bewahren.\n\n Ich empfinde große Leidenschaft und Verantwortung für meine Arbeit. Neben der geduldigen und liebevollen Zuwendung zu den Kindern suche ich nach geeigneten methodischen Strategien, um ihr Interesse zu wecken und dazu beizutragen, dass der Lehr- und Lernprozess gemeinsam mit den Eltern gelingt und zu einer bereichernden, lustigen und äußerst produktiven Erfahrung wird.")}
                     </Text>
                 </Box>
             </Box>

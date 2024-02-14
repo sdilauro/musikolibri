@@ -23,6 +23,7 @@ const AlterCard = (props: AlterCardProps) => {
 
                 <CardBody>
                     <Image
+                        width='25rem'
                         src={props.imageSource}
                         alt='Green double couch with wooden legs'
                         borderRadius='lg'
