@@ -44,11 +44,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                 ...mailOptions,
                 to:process.env.NM_EMAIL,
                 subject: `Musikolibri - Consulta por ${kurse.name}`,
-                text: `Padre: ${data.name} ${data.vorname}, Niño: ${data.child}, Fecha de nacimiento: ${data.geburtsdatum}, Curso: ${kurse.name}, E-mail: ${data.email}, Teléfono: ${data.telefon}, Dirección: ${data.adresse}, PLZ: ${data.plz}, Ort: ${data.ort}, Mensaje opcional: ${data.nachricht}`,
+                text: `Padre: ${data.vorname} ${data.name}, Niño: ${data.child}, Fecha de nacimiento: ${data.geburtsdatum}, Curso: ${kurse.name}, E-mail: ${data.email}, Teléfono: ${data.telefon}, Dirección: ${data.adresse}, PLZ: ${data.plz}, Ort: ${data.ort}, Mensaje opcional: ${data.nachricht}`,
                 html: `<div style="width:80%; max-width: 500px; align-items:center; justify-content: center; margin:0px;">
                 <div style=" padding:20px; background-color:#f5eee6; border-style:solid; border-width:0px;border-radius: 10px;">
                   <h2 style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px; font-weight: bolder; text-align: center">¡Te ha llegado una consulta!</h2>
-                  <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px"> Padre: ${data.name} ${data.vorname} </p>
+                  <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px"> Padre: ${data.vorname} ${data.name} </p>
                   <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px"> Niño: ${data.child} </p>
                   <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px"> Fecha de nacimiento: ${data.geburtsdatum} </p>
                   <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px"> Curso: ${kurse.name} </p>

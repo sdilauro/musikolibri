@@ -201,7 +201,11 @@ export default function AnmeldungFormPage() {
               variant='solid'
               borderRadius={"1.5rem"}
               height={"3rem"}
+              width={"10rem"}
               isLoading={isLoading}
+              className={gochi.className}
+              fontSize={'22px'}
+              fontWeight={400}
               isDisabled={
                 !values.name || !values.email || !values.kurse || !values.child || !values.adresse || !values.geburtsdatum || !values.ort || !values.plz || !values.telefon || !values.vorname
               }

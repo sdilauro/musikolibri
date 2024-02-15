@@ -29,11 +29,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                 ...mailOptions,
                 to:data.email,
                 subject: `Musikolibri - Kurs ${kurse.name}`,
-                text: `Hallo ihr Lieben, ${data.name} und ${data.child}, vielen Dank für Eure Anmeldung zum Kurs ${kurse.name}, der am ${kurse.days} im Zeitraum ${kurse.schedule} Uhr stattfindet. Ich werde mich in Kürze mit weiteren Informationen zum Workshop bei euch melden. `,
+                text: `Hallo ihr Lieben, ${data.vorname} und ${data.child}, vielen Dank für Eure Anmeldung zum Kurs ${kurse.name}, der am ${kurse.days} im Zeitraum ${kurse.schedule} Uhr stattfindet. Ich werde mich in Kürze mit weiteren Informationen zum Workshop bei euch melden. `,
                 html: `<div style="width:80%; max-width: 500px; align-items:center; justify-content: center; margin:0px;">
                 <div style=" padding:20px; background-color:#f5eee6; border-style:solid; border-width:0px;border-radius: 10px;">
                   <h2 style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px; font-weight: bolder; text-align: center"> &#x1F3B5; Danke für Eure Anmeldung! &#x1F3B5; </h2>
-                  <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px"> Hallo ihr Lieben, ${data.name} und ${data.child},</p>
+                  <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px"> Hallo ihr Lieben, ${data.vorname} und ${data.child},</p>
                   <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px"> vielen Dank für Eure Anmeldung zum Kurs ${kurse.name}, der am</p>
                   <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px; text-align: center; font-weight: bolder">${kurse.days} </p>
                   <p style="font-family:sans-serif;color:rgb(0, 0, 0); margin: 20px"> im Zeitraum </p>

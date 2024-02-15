@@ -145,6 +145,10 @@ export default function KontaktPage() {
             variant='solid'
             borderRadius={"1.5rem"}
             height={"3rem"}
+            width={"10rem"}
+            className={gochi.className}
+            fontSize={'22px'}
+            fontWeight={400}
             isLoading={isLoading}
             isDisabled={
               !values.name || !values.email || !values.nachricht
