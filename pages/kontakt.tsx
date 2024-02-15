@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Box, Button, Container, Flex, FormControl, FormLabel, Image, Text, Textarea, useMediaQuery, useToast } from "@chakra-ui/react";
 import { Gochi_Hand } from "next/font/google";
 import { useState } from "react";
@@ -18,6 +19,9 @@ const gochi = Gochi_Hand({
 })
 
 export default function KontaktPage() {
+  useEffect(() => {
+    document.title = 'Kontakt - Musikolibri Bochum';
+  }, []);
 
   const [isSmallScreen] = useMediaQuery(maxWidth);
   const toast = useToast();

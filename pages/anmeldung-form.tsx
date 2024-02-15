@@ -25,6 +25,9 @@ const gochi = Gochi_Hand({
 })
 
 export default function AnmeldungFormPage() {
+  useEffect(() => {
+    document.title = 'Anmeldeformular - Musikolibri Bochum';
+  }, []);
 
   const [isSmallScreen] = useMediaQuery(maxWidth);
   const toast = useToast();

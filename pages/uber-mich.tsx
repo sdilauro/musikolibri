@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useEffect } from 'react';
 import { Box, Flex, Image, List, ListIcon, ListItem, Text, useMediaQuery } from "@chakra-ui/react";
 import { Gochi_Hand } from 'next/font/google';
 import { IoMdMusicalNote } from "react-icons/io";
@@ -34,6 +34,9 @@ const contents = require('public/assets/timeline.json');
 data = contents.timeline
 
 export default function UberMichPage() {
+    useEffect(() => {
+        document.title = 'Über mich - Musikolibri Bochum';
+      }, []);
     const [isSmallScreen] = useMediaQuery(maxWidth);
 
     return (

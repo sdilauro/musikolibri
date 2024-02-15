@@ -18,6 +18,9 @@ const addLineBreak = (str: string) =>
 
 export default function GruppePage() {
     const [isSmallScreen] = useMediaQuery(maxWidth);
+    useEffect(() => {
+        document.title = 'Die Gruppen - Musikolibri Bochum';
+      }, []);
     return (
 
         <Box>

@@ -18,6 +18,9 @@ const addLineBreak = (str: string) =>
 
 export default function KonzeptPage() {
     const [isSmallScreen] = useMediaQuery(maxWidth);
+    useEffect(() => {
+        document.title = 'Das pedagogische Konzept - Musikolibri Bochum';
+      }, []);
     return (
 
         <Box>

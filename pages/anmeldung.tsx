@@ -5,6 +5,7 @@ import GruppeItem from "../components/gruppe-item";
 export default function AnmeldungPage() {
     
     useEffect(() => {
+        document.title = 'Anmeldung - Musikolibri Bochum';
         const url = window.location.href;
         const params = new URLSearchParams(url.split('#')[1]);
         const myElement = document.getElementById(params.toString());

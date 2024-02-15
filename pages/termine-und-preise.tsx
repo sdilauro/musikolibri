@@ -1,8 +1,12 @@
+import React, { useEffect } from 'react';
 import { Box, Flex, useMediaQuery } from "@chakra-ui/react";
 import KursCard from "../components/kurs-card";
 import { maxWidth } from "../config/config";
 
 export default function TermineUndPreisePage() {
+    useEffect(() => {
+        document.title = 'Termine & Preise - Musikolibri Bochum';
+      }, []);
     const [isSmallScreen] = useMediaQuery(maxWidth);
     return (
         <>
@@ -34,7 +38,7 @@ export default function TermineUndPreisePage() {
                     price={96}
                     imageSource="/assets/herbst.png"
                     details={["Gruppe I & II","8 Termine à 40 Min","Inkl. Texte"]}
-                    id={"herbost"}
+                    id={"herbst"}
                 />
                 <KursCard
                     name="Winter"

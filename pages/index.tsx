@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Box, Button, Flex, Image, Link, List, ListIcon, ListItem, Stack, Text, useMediaQuery } from '@chakra-ui/react';
 import { gochi, maxWidth, oswald } from '../config/config';
 import AlterCard from "../components/alter-card";
@@ -15,6 +16,9 @@ const addLineBreak = (str: string) =>
 
 export default function HomePage() {
   const [isSmallScreen] = useMediaQuery(maxWidth);
+  useEffect(() => {
+    document.title = 'Musikolibri Bochum';
+  }, []);
   return (
     <>
       <Box sx={{ w: '100%' }} className='light'>
@@ -111,7 +115,7 @@ export default function HomePage() {
                         </ListItem>
                         <ListItem>
                             <ListIcon as={IoMdMusicalNote} color="#E6175B" />
-                            die Bindung zwischen Kind und Bezugsperson stärken.
+                            die Bindung zwischen Kind und Eltern stärken.
                         </ListItem>
                         <ListItem>
                             <ListIcon as={IoMdMusicalNote} color="#E6175B" />
