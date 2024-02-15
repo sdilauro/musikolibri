@@ -101,7 +101,7 @@ export default function KonzeptPage() {
                             marginTop={'2rem'}
                             fontSize={isSmallScreen ? '18' : '20'}
                             className={oswald.className}>
-                            {addLineBreak("Die musikalische Erziehung in Verbindung mit spielerischen Aktivitäten motiviert die spontane Teilnahme der kleinen Mäuse, die sich zusammen mit ihren Eltern, angezogen von Rhythmen und Melodien, leichter in die Gruppe integrieren und eine positive Einstellung zum Lernen entwickeln. \n\n Die Musikerziehung ist eine aktive Methode, die auf den Grundprinzipien der ganzheitlichen Erziehung, der Integration, des Fortschritts, der Freiheit und Kreativität sowie auf ihrem spielerischen, interdisziplinären und vielseitigen Charakter beruht. Ihre drei Grundpfeiler sind der Rhythmus, der in der Musik Ordnung und Proportion bedeutet, die Melodie, eine Kombination von Tönen, die eine musikalische Idee ausdrückt, und die Harmonie, die musikalische Struktur, die Rhythmus und Melodie unterstützt.")}
+                            {addLineBreak("Die musikalische Erziehung in Verbindung mit spielerischen Aktivitäten motiviert die spontane Teilnahme der kleinen Mäuse, die sich zusammen mit ihren Eltern, angezogen von Rhythmen und Melodien, leichter in die Gruppe integrieren und eine positive Einstellung zum Lernen entwickeln. \n\n Die musikalische Intelligenz entwickelt sich bereits in der frühen Kindheit, im Mutterleib und in der Wiege, und ist von grundlegender Bedeutung für die kognitive, psychomotorische, emotionale und soziale Entwicklung; es muss jedoch betont werden, dass sie bei jedem Kind anders ausgeprägt ist, da das Gehirn die Klangfarbe, die Intensität, den Rhythmus, die Tonhöhe, die Wahrnehmung und die Produktion von Liedern nur in dem Maße verarbeiten kann, in dem es sie erlebt und mit ihnen in Beziehung tritt, so dass die Fortschritte individuell sind.")}
                         </Text>
                         <Image
                             width={isSmallScreen ? '20rem' : '45rem'}
@@ -113,12 +113,6 @@ export default function KonzeptPage() {
                             objectFit='contain'
                             marginBottom={'2rem'}
                         />
-                        <Text
-                            marginBottom={'2rem'}
-                            fontSize={isSmallScreen ? '18' : '20'}
-                            className={oswald.className}>
-                            {addLineBreak("Diese Aspekte sind eng mit unserem Leben verknüpft. Der Rhythmus ist mit der physiologischen Dimension verbunden, die sich in der Reaktion des Körpers auf musikalische Reize ausdrückt. Die Melodie ist mit der emotionalen Sphäre verbunden, die durch den Ausdruck von Gefühlen bei der Schaffung und Aufführung von Musik spürbar wird. Harmonie entspricht der intellektuellen Dimension, die die Entwicklung von Lesen, Schreiben, Sprechen, Gedächtnis, Phantasie, Zuhören und Lernen beeinflusst. \n\n Die musikalische Intelligenz entwickelt sich bereits in der frühen Kindheit, im Mutterleib und in der Wiege, und ist von grundlegender Bedeutung für die kognitive, psychomotorische, emotionale und soziale Entwicklung; es muss jedoch betont werden, dass sie bei jedem Kind anders ausgeprägt ist, da das Gehirn die Klangfarbe, die Intensität, den Rhythmus, die Tonhöhe, die Wahrnehmung und die Produktion von Liedern nur in dem Maße verarbeiten kann, in dem es sie erlebt und mit ihnen in Beziehung tritt, so dass die Fortschritte individuell sind.")}
-                        </Text>
                     </Box>
                 </Flex>
             </Box>

@@ -165,7 +165,7 @@ export default function HomePage() {
             marginInline={'2rem'}
             className={oswald.className}
             fontSize={isSmallScreen ? '18' : '20'}>
-            {addLineBreak("Musikolibri möchte Eltern und Kindern die nötigen Werkzeuge an die Hand geben, damit sie als Familie selbst Musik machen können, wo, wann und wie sie wollen. Es ist ein Raum, der dazu einlädt, eine Welt voller rhythmischer und klanglicher Möglichkeiten zu entdecken, die das aktive Lernen der Kinder durch spielerische und kreative Aktivitäten wie Singen, Tanzen und Improvisieren mit Musikinstrumenten fördert.\n\n Die Eltern bzw. die Bezungspersonen spielen eine wichtige Rolle, da sie aktiv an allen Aktivitäten teilnehmen. Auf diese Weise wird die Bindung zur kleinen Maus gestärkt und das Selbstvertrauen und Selbstwertgefühl des Kindes gesteigert.\n")}
+            {addLineBreak("Die Musikerziehung ist eine aktive Methode, die auf den Grundprinzipien der ganzheitlichen Erziehung, der Integration, des Fortschritts, der Freiheit und Kreativität sowie auf ihrem spielerischen, interdisziplinären und vielseitigen Charakter beruht. Ihre drei Grundpfeiler sind der Rhythmus, der in der Musik Ordnung und Proportion bedeutet, die Melodie, eine Kombination von Tönen, die eine musikalische Idee ausdrückt, und die Harmonie, die musikalische Struktur, die Rhythmus und Melodie unterstützt. \n\n Diese Aspekte sind eng mit unserem Leben verknüpft. Der Rhythmus ist mit der physiologischen Dimension verbunden, die sich in der Reaktion des Körpers auf musikalische Reize ausdrückt. Die Melodie ist mit der emotionalen Sphäre verbunden, die durch den Ausdruck von Gefühlen bei der Schaffung und Aufführung von Musik spürbar wird. Harmonie entspricht der intellektuellen Dimension, die die Entwicklung von Lesen, Schreiben, Sprechen, Gedächtnis, Phantasie, Zuhören und Lernen beeinflusst. \n")}
           </Text>
 
 
@@ -192,7 +192,7 @@ export default function HomePage() {
                 sx={{ fontcolor: "black"}}
                 marginInline={'2rem'}
               >
-                {addLineBreak("Die Kurse sind in zwei Gruppen unterteilt, wobei die Aktivitäten dem Alter und den Bedürfnissen der Kinder angepasst sind.")}
+                {addLineBreak("Die Kurse sind in zwei Gruppen unterteilt, wobei die Aktivitäten dem Alter und den Bedürfnissen der Kinder angepasst sind. \n\n Musikolibri möchte Eltern und Kindern die nötigen Werkzeuge an die Hand geben, damit sie als Familie selbst Musik machen können, wo, wann und wie sie wollen. Es ist ein Raum, der dazu einlädt, eine Welt voller rhythmischer und klanglicher Möglichkeiten zu entdecken, die das aktive Lernen der Kinder durch spielerische und kreative Aktivitäten wie Singen, Tanzen und Improvisieren mit Musikinstrumenten fördert.\n\n Die Eltern bzw. die Bezugspersonen spielen eine wichtige Rolle, da sie aktiv an allen Aktivitäten teilnehmen. Auf diese Weise wird die Bindung zur kleinen Maus gestärkt und das Selbstvertrauen und Selbstwertgefühl des Kindes gesteigert.")}
                 
               </Text>
         <Flex className="light" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'} >
