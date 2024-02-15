@@ -31,7 +31,7 @@ const GruppeItem = (props:GruppeItemProps) => {
 
     return (
         <Box backgroundColor={props.color=='dark'?'#f4e4dc':'#f5eee6'} padding='2rem' textColor={'black'} id={props.id}>
-            <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'1200'} width={'90%'} margin={'auto'}>
+            <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'1200'} width={'100%'} margin={'auto'}>
                 <Text 
                     marginBottom={'1rem'}
                     fontSize={isSmallScreen?'36':'48'} 
