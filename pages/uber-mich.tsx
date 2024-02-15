@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect } from 'react';
 import { Box, Flex, Image, List, ListIcon, ListItem, Text, useMediaQuery } from "@chakra-ui/react";
-import { Gochi_Hand } from 'next/font/google';
+import { gochi, maxWidth, oswald } from '../config/config';
 import { IoMdMusicalNote } from "react-icons/io";
 import DatedParagraphBig from "../components/dated-paragraph-big";
-import { maxWidth } from "../config/config";
 import 'public/assets/timeline.json'
 import DatedParagraphSmall from "../components/dated-paragraph-small";
 
@@ -18,10 +17,6 @@ const addLineBreak = (str: string) =>
         );
     });
 
-const gochi = Gochi_Hand({
-    weight: '400',
-    subsets: ['latin'],
-})
 
 let data: {
     date: string;
@@ -42,7 +37,7 @@ export default function UberMichPage() {
     return (
         <>
             <Box sx={{ w: '100%' }} className='light'>
-                <Box marginBottom={isSmallScreen?'0':'3rem'} sx={{ paddingY: '2rem', display: 'flex', flexDir: 'column', maxWidth: '1440px', width: '80%' }} className='light'>
+                <Box marginBottom={isSmallScreen?'0':'3rem'} sx={{ paddingY: '2rem', display: 'flex', flexDir: 'column', maxWidth: '1200px', width: '80%' }} className='light'>
                     <Text
                         noOfLines={2}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'
@@ -58,7 +53,7 @@ export default function UberMichPage() {
                 </Box>
             </Box>
             <Flex  sx={{ w: '100%' }} className='dark'>
-                <Box flexDir={isSmallScreen?'column':'row'} width={isSmallScreen?'80%':'70%'} sx={{ paddingY: '2rem', display: 'flex', alignItems: 'self-start', maxWidth: '1440px' }} className='dark'>
+                <Box flexDir={isSmallScreen?'column':'row'} width={isSmallScreen?'90%':'70%'} sx={{ paddingY: '2rem', display: 'flex', alignItems: 'self-start', maxWidth: '1200px' }} className='dark'>
                     <Box textAlign={'left'} sx={{ display: 'flex', flexDir: 'column', flex: '0.5', alignItems: 'self-start' }} className='dark'>
                         <Text
                             noOfLines={2}
@@ -73,7 +68,7 @@ export default function UberMichPage() {
                         >
                             Hallo! Ich bin Anabela
                         </Text>
-                        <List p={2} fontSize="1.25em" textAlign={'left'}>
+                        <List p={2} fontSize={isSmallScreen ? '18' : '20'} textAlign={'left'} className={oswald.className}>
                             <ListItem>
                                 <ListIcon as={IoMdMusicalNote} color='#E6175B' />
                                 Pianistin
@@ -93,9 +88,10 @@ export default function UberMichPage() {
                             
                         </List>
                         <Text
-                            fontSize='1.25rem'
                             sx={{ fontcolor: "black", px: "0.5rem" }}
                             textAlign={'justify'}
+                            className={oswald.className}
+                            fontSize={isSmallScreen ? '18' : '20'}
                         >
                             Seit 2006 unterrichte ich Klavier. Ich bin ein leidenschaftlicher Mensch, der die Musik, das Unterrichten und die Kinder sehr liebt.
                         </Text>
@@ -116,7 +112,7 @@ export default function UberMichPage() {
                 </Box>
             </Flex>
             <Box sx={{ w: '100%' }} className='light'>
-                <Box sx={{ paddingY: '2rem', paddingBottom: '6rem', display: 'flex', flexDir: 'column', maxWidth: '1440px' }} width={isSmallScreen?'80%':'70%'} className='light'>
+                <Box sx={{ paddingY: '2rem', paddingBottom: '6rem', display: 'flex', flexDir: 'column', maxWidth: '1200px' }} width={isSmallScreen?'90%':'70%'} className='light'>
                     <Text
                         noOfLines={2}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'
@@ -128,17 +124,18 @@ export default function UberMichPage() {
                         Was mich bewegt
                     </Text>
                     <Text
-                        fontSize='1.25rem'
                         align={'left'}
                         sx={{ fontcolor: "black" }}
                         textAlign='justify'
+                        className={oswald.className}
+                        fontSize={isSmallScreen ? '18' : '20'}
                     >
                          {addLineBreak("Ich widme mich der Förderung der Kreativität, der Entwicklung von Fähigkeiten, die spezifisch mit dem musikalischen Lernen verbunden sind, um die Tradition des Singens in der Familie und die ganzheitliche Entwicklung des Menschen zu bewahren.\n\n Ich empfinde große Leidenschaft und Verantwortung für meine Arbeit. Neben der geduldigen und liebevollen Zuwendung zu den Kindern suche ich nach geeigneten methodischen Strategien, um ihr Interesse zu wecken und dazu beizutragen, dass der Lehr- und Lernprozess gemeinsam mit den Eltern gelingt und zu einer bereichernden, lustigen und äußerst produktiven Erfahrung wird.")}
                     </Text>
                 </Box>
             </Box>
             <Box sx={{ w: '100%' }} className='dark'>
-                <Box sx={{ paddingY: '2rem', paddingBottom: '6rem', display: 'flex', flexDir: 'column', maxWidth: '1440px'}} width={isSmallScreen?'80%':'70%'} className='dark'>
+                <Box sx={{ paddingY: '2rem', paddingBottom: '6rem', display: 'flex', flexDir: 'column', maxWidth: '1200px'}} width={isSmallScreen?'90%':'70%'} className='dark'>
                     <Text
                         noOfLines={2}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'

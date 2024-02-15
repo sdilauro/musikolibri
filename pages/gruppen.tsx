@@ -39,7 +39,7 @@ export default function GruppePage() {
 
             </Box>
             <Box backgroundColor={'#f5eee6'} padding='2rem' minW={'400px'} textColor={'black'} id="1">
-                <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'90%'} margin={'auto'}>
+                <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'100%'} margin={'auto'}>
                     <Text
                         marginBottom={'-0.5rem'}
                         fontSize={isSmallScreen ? '36' : '48'}
@@ -54,10 +54,11 @@ export default function GruppePage() {
                         fontSize={isSmallScreen ? '24' : '36'}
                         className={gochi.className}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'
-                        bgClip='text'>
+                        bgClip='text'
+                        paddingBottom={'1rem'}>
                         4 bis 18 Monate
                     </Text>
-                    <Box flexDir={isSmallScreen ? 'column' : 'column'} alignItems={isSmallScreen ? 'center' : 'center '} sx={{ display: 'flex', width: '100%'  }} marginInline={'2rem'} className='light'>
+                    <Box flexDir={isSmallScreen ? 'column' : 'column'} alignItems={isSmallScreen ? 'center' : 'center '} sx={{ display: 'flex', width: '100%'  }} className='light'>
                         <Text
                             paddingRight='3rem'
                             marginBottom={'2rem'}
@@ -76,11 +77,12 @@ export default function GruppePage() {
                         />
                     </Box>
                     <Text
-                        marginBottom={'-3.5rem'}
                         fontSize={isSmallScreen ? '24' : '36'}
+                        lineHeight={1}
                         className={gochi.className}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'
-                        bgClip='text'>
+                        bgClip='text'
+                        marginBottom={'-1.5rem'}>
                         {addLineBreak("\n\Zu den Aktivitäten gehören, unter anderem: \n")}
                     </Text>
                     <List p={2} fontSize={isSmallScreen ? '18' : '20'} className={oswald.className} textAlign={'left'}>
@@ -131,7 +133,8 @@ export default function GruppePage() {
 
                     </List>
                     <Text
-                        marginBottom={'-3.5rem'}
+                        lineHeight={1}
+                        marginBottom={'-1.5rem'}
                         fontSize={isSmallScreen ? '24' : '36'}
                         className={gochi.className}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'
@@ -168,7 +171,7 @@ export default function GruppePage() {
 
             </Box>
             <Box backgroundColor={'#f4e4dc'} padding='2rem' minW={'400px'} textColor={'black'} id="2">
-                <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'90%'} margin={'auto'}>
+                <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'100%'} margin={'auto'}>
                     <Text
                         marginBottom={'-0.5rem'}
                         fontSize={isSmallScreen ? '36' : '48'}
@@ -182,10 +185,11 @@ export default function GruppePage() {
                         fontSize={isSmallScreen ? '24' : '36'}
                         className={gochi.className}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'
-                        bgClip='text'>
+                        bgClip='text'
+                        paddingBottom={'1rem'}>
                         19 bis 36 Monate
                     </Text>
-                    <Box flexDir={isSmallScreen ? 'column' : 'column'} alignItems={isSmallScreen ? 'center' : 'center '} sx={{ display: 'flex', width: '100%'  }} marginInline={'2rem'} className='dark'>
+                    <Box flexDir={isSmallScreen ? 'column' : 'column'} alignItems={isSmallScreen ? 'center' : 'center '} sx={{ display: 'flex', width: '100%'  }} className='dark'>
                         <Text
                             paddingRight='3rem'
                             marginBottom={'2rem'}
@@ -204,7 +208,8 @@ export default function GruppePage() {
                         />
                     </Box>
                     <Text
-                        marginBottom={'-3.5rem'}
+                        lineHeight={1}
+                        marginBottom={'-1.5rem'}
                         fontSize={isSmallScreen ? '24' : '36'}
                         className={gochi.className}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'
@@ -255,7 +260,8 @@ export default function GruppePage() {
 
                     </List>
                     <Text
-                        marginBottom={'-3.5rem'}
+                        lineHeight={1}
+                        marginBottom={'-1.5rem'}
                         fontSize={isSmallScreen ? '24' : '36'}
                         className={gochi.className}
                         bgGradient='linear(to-l, #7A59CA, #E6175B)'

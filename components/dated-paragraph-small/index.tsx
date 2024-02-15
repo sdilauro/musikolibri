@@ -1,13 +1,9 @@
 'use client'
 
 import { Divider, Flex, Image, Text } from '@chakra-ui/react';
-import { Gochi_Hand } from 'next/font/google';
+import { gochi, oswald } from '../../config/config';
 
 
-  const gochi = Gochi_Hand({
-    weight: '400',
-    subsets: ['latin'],
-  })
    
 export type DatedParagraphProps = { date: string, paragraph: string, im_src: string, im_alt: string }
 
@@ -38,7 +34,7 @@ const DatedParagraphSmall = (props:DatedParagraphProps) => {
                 <Divider orientation='vertical' flex={1} borderColor={'#E6175B'} marginBottom={'1rem'} />
             </Flex>
             <Flex flexDir='column' alignItems='center' marginLeft={'1rem'} minWidth={'8rem'}>
-                <Text fontSize='1.25rem' marginBottom={'1rem'} ml={'1rem'} textAlign='justify'>{addLineBreak(props.paragraph)}</Text>
+                <Text fontSize='1.25rem' marginBottom={'1rem'} ml={'1rem'} textAlign='justify' className={oswald.className} >{addLineBreak(props.paragraph)}</Text>
                 <Image
                     width='25rem'
                     src={props.im_src}

@@ -22,8 +22,8 @@ export default function HomePage() {
   return (
     <>
       <Box sx={{ w: '100%' }} className='light'>
-        <Box className='content-size'>
-          <Box sx={{ paddingY: '2rem', paddingBottom: '9rem', display: 'flex', flexDir: 'column', width: '100%' }} className='light'>
+        <Box className='content-size' width={'80%'}>
+          <Box sx={{ paddingY: '2rem', display: 'flex', flexDir: 'column', width: '100%' }} className='light'>
             <Text
               noOfLines={2}
               bgGradient='linear(to-l, #7A59CA, #E6175B)'
@@ -57,7 +57,7 @@ export default function HomePage() {
             >
               Entdecke, wie Musik die Entwicklung deines Kindes fördern kann.
             </Text>
-            <Stack direction='row' spacing={4} display={'flex'} justifyContent={'center'} marginY={'1rem'}>
+            <Stack direction={isSmallScreen ? 'column' : 'row'} spacing={4} display={'flex'} justifyContent={'center'} marginY={'1rem'} paddingBottom={isSmallScreen ? '0rem' : '9rem'}>
             <Link style={{ textDecoration: 'none' }} href={'/konzept'}>
               <Button
                 colorScheme='purple'
@@ -66,7 +66,8 @@ export default function HomePage() {
                 height={"3rem"}
                 className={gochi.className}
                 fontSize={'22px'}
-                fontWeight={400}>
+                fontWeight={400}
+                width={'12rem'}>
                 Mehr Erfahren
               </Button>
             </Link>
@@ -78,7 +79,8 @@ export default function HomePage() {
                 height={"3rem"}
                 className={gochi.className}
                 fontSize={'22px'}
-                fontWeight={400}>
+                fontWeight={400}
+                width={'12rem'}>
                 Jetzt Anmelden
               </Button>
               </Link>
@@ -87,8 +89,8 @@ export default function HomePage() {
         </Box>
       </Box>
       <Box sx={{ w: '100%' }} className='dark' justifyContent={'space-between'}>
-        <Box className='content-size'>
-          <Box flexDir={isSmallScreen ? 'column' : 'row'} alignItems={isSmallScreen ? 'center' : 'self-start'} sx={{ display: 'flex', width: '100%'  }} marginInline={'2rem'} className='dark'>
+        <Box className='content-size' width={isSmallScreen? '100%' : '80%'}>
+          <Box flexDir={isSmallScreen ? 'column' : 'row'} alignItems={isSmallScreen ? 'center' : 'self-start'} sx={{ display: 'flex'}} marginInline={'2rem'} className='dark'>
             <Box sx={{ display: 'flex', flexDir: 'column', flex: '0.5', alignItems: 'self-start' }} className='dark'>
               <Text
                 noOfLines={2}
@@ -111,7 +113,7 @@ export default function HomePage() {
                 {addLineBreak("Musikolibri lädt Dich ein, deine kleine Maus bei ihren ersten Schritten in die Welt der Klänge, Rhythmen, Harmonien und Melodien zu begleiten und gemeinsam, Hand in Hand, einen wunderbaren musikalischen Weg zu entdecken. \n\n Mit den Musikolibri-Kursen kann die Musik\n")}
                 
               </Text>
-              <List p={2} className={oswald.className} fontSize={isSmallScreen ? '18' : '20'} textAlign={'left'}>
+              <List p={2} className={oswald.className} fontSize={isSmallScreen ? '18' : '20'} textAlign={'left'} marginBottom={'3rem'}>
                         <ListItem>
                             <ListIcon as={IoMdMusicalNote} color='#E6175B' />
                             die kognitive und motorische Entwicklung des Kindes fördern.
@@ -154,7 +156,7 @@ export default function HomePage() {
               }
             </Box>
           </Box>
-          <Flex className="dark" alignItems={isSmallScreen ? 'center' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'} >
+          
           <Text
             marginTop={isSmallScreen ? '1rem' : '-2.5rem'}
             marginInline={'2rem'}
@@ -162,12 +164,12 @@ export default function HomePage() {
             fontSize={isSmallScreen ? '18' : '20'}>
             {addLineBreak("Musikolibri möchte Eltern und Kindern die nötigen Werkzeuge an die Hand geben, damit sie als Familie selbst Musik machen können, wo, wann und wie sie wollen. Es ist ein Raum, der dazu einlädt, eine Welt voller rhythmischer und klanglicher Möglichkeiten zu entdecken, die das aktive Lernen der Kinder durch spielerische und kreative Aktivitäten wie Singen, Tanzen und Improvisieren mit Musikinstrumenten fördert.\n\n Die Eltern bzw. die Bezungspersonen spielen eine wichtige Rolle, da sie aktiv an allen Aktivitäten teilnehmen. Auf diese Weise wird die Bindung zur kleinen Maus gestärkt und das Selbstvertrauen und Selbstwertgefühl des Kindes gesteigert.\n")}
           </Text>
-          </Flex>
+
 
         </Box>
       </Box>
       <Box sx={{ w: '100%' }} className='light' justifyContent={'space-between'}>
-        <Box className='content-size' >
+        <Box className='content-size' width={isSmallScreen? '100%' : '80%'}>
         <Text
                 noOfLines={2}
                 bgGradient='linear(to-l, #7A59CA, #E6175B)'
@@ -176,7 +178,7 @@ export default function HomePage() {
                 fontSize='4xl'
                 textAlign={'left'}
                 marginInline={'2rem'}
-                sx={{ px: "0.5rem", marginTop: "2rem" }}
+                sx={{ marginTop: "2rem" }}
               >
                 Die Gruppen
               </Text>
@@ -184,7 +186,7 @@ export default function HomePage() {
                 className={oswald.className}
                 fontSize={isSmallScreen ? '18' : '20'}
                 align={'left'}
-                sx={{ fontcolor: "black", px: "0.5rem" }}
+                sx={{ fontcolor: "black"}}
                 marginInline={'2rem'}
               >
                 {addLineBreak("Die Kurse sind in zwei Gruppen unterteilt, wobei die Aktivitäten dem Alter und den Bedürfnissen der Kinder angepasst sind.")}

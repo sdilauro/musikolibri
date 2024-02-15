@@ -1,4 +1,4 @@
-import { Box, Image, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Image, Link, Text, useMediaQuery } from "@chakra-ui/react";
 import { gochi, maxWidth, oswald } from '../config/config';
 import React, { useEffect } from 'react';
 
@@ -31,7 +31,7 @@ export default function DankePage() {
                 sx={{ paddingBottom: '2rem'}}
                 marginTop='5rem'
             >
-                Danke für eure Anmeldung!
+                Danke für eure Nachricht!
             </Text>
             <Text
                 fontSize='1.25rem'
@@ -40,7 +40,29 @@ export default function DankePage() {
                 textAlign='justify'
                 className={oswald.className}
             >
-                {addLineBreak("Ich habe Eure Anmeldung für den Musikworkshop Eurer kleinen Maus erhalten. \n\n Eine Bestätigungsmail wurde soeben an die angegebene Adresse geschickt. (Bitte überprüft ggf. Euren Spam-Ordner). \n\n Ich werde mich in Kürze mit weiteren Informationen zum Workshop bei Euch melden.")}
+                {addLineBreak("Ich habe Eure Nachricht erhalten! Ich werde mich in Kürze bei Euch melden. (Bitte überprüft ggf. Euren Spam-Ordner). \n\n Für weitere Fragen oder Anmerkungen stehe ich Euch auch per E-Mail zur Verfügung:")}
+            </Text>
+            <Text
+                fontSize='1.25rem'
+                align={'left'}
+                sx={{ fontcolor: "black",  paddingBottom: '2rem' }}
+                textAlign='justify'
+                className={oswald.className}
+            >
+                  <Link href='mailto:anabela@musikolibri.de'>
+                  anabela@musikolibri.de
+  </Link>
+            </Text>
+            <Text
+                fontSize='2.25rem'
+                align={'left'}
+                sx={{ fontcolor: "black",  paddingBottom: '2rem' }}
+                textAlign='left'
+                className={gochi.className}
+                bgGradient='linear(to-l, #7A59CA, #E6175B)'
+                bgClip='text'
+            >
+                {addLineBreak("Ich freue mich auf Euch!")}
             </Text>
             <Box sx={{display: 'flex', flex: '0.5' }} flexDir={'row'} alignItems={'center'} w={'100%'} className='light'>
                         <Image

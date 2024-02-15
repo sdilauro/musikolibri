@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { Box, Flex, Image, List, ListIcon, ListItem, Text, useMediaQuery } from "@chakra-ui/react";
-import { IoMdMusicalNote } from "react-icons/io";
+import { Box, Flex, Image, Text, useMediaQuery } from "@chakra-ui/react";
 import { gochi, maxWidth, oswald } from '../config/config';
 
 const addLineBreak = (str: string) =>
@@ -37,18 +36,17 @@ export default function KonzeptPage() {
                     Das pedagogische Konzept
                 </Text>
             </Box>
-            <Box backgroundColor={'#f5eee6'} padding='2rem' minW={'400px'} textColor={'black'} id="1">
-                <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'90%'} margin={'auto'}>
-                    <Box flexDir={'column'} alignItems={ 'center '} sx={{ display: 'flex', width: '100%' }} marginInline={'2rem'} className='light'>
+            <Box backgroundColor={'#f5eee6'} padding='2rem'  textColor={'black'} id="1">
+                <Flex flexDir='column' flex='0' alignItems='top' maxWidth={'900'} width={'100%'} margin={'auto'}>
+                    <Box flexDir={'column'} alignItems={ 'center '} sx={{ display: 'flex' }}  className='light'>
                         <Text
-                            paddingRight='3rem'
                             marginBottom={'2rem'}
                             fontSize={isSmallScreen ? '18' : '20'}
                             className={oswald.className}>
                             {addLineBreak("Musikolibri möchte durch Musik die gesunde körperliche und geistige Entwicklung des Kindes in einem harmonischen, liebevollen und belastbaren Familiensystem fördern.\n\n Mit der Geburt entwickelt sich die Beziehung zwischen Eltern und Kind allmählich zu einem komplexen System sozialer Beziehungen. Jedes Baby ist in seiner physischen und psychischen Konstitution einzigartig, ebenso wie die Umwelt und die sozialen Systeme, in denen es aufwächst.")}
                         </Text>
                         <Image
-                            width='35rem'
+                            width={isSmallScreen ? '100%' : '45rem'}
                             src='/assets/konzept_1.JPG'
                             alt='konzept_1'
                             fallbackSrc='https://via.placeholder.com/512'
@@ -58,7 +56,6 @@ export default function KonzeptPage() {
                             marginBottom={'2rem'}
                         />
                         <Text
-                            paddingRight='3rem'
                             marginBottom={'2rem'}
                             fontSize={isSmallScreen ? '18' : '20'}
                             className={oswald.className}>
@@ -68,10 +65,10 @@ export default function KonzeptPage() {
                 </Flex>
             </Box>
             <Box className="dark" padding='2rem' minW={'400px'} textColor={'black'} id="2">
-                <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'90%'} margin={'auto'}>
-                    <Box flexDir={isSmallScreen ? 'column' : 'row'} alignItems={isSmallScreen ? 'center' : 'self-start '} sx={{ display: 'flex', width: '100%' }} marginInline={'2rem'} className='dark'>
+                <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'100%'} margin={'auto'}>
+                    <Box flexDir={isSmallScreen ? 'column' : 'row'} alignItems={isSmallScreen ? 'center' : 'center '} sx={{ display: 'flex'}}  className='dark'>
                         <Text
-                            paddingRight='3rem'
+                            paddingRight={isSmallScreen ? '0rem' : '2rem'}
                             marginTop={'2rem'}
                             marginBottom={'2rem'}
                             fontSize={isSmallScreen ? '18' : '20'}
@@ -79,7 +76,7 @@ export default function KonzeptPage() {
                             {addLineBreak("Das Material wird sowohl aus klassischen und traditionellen deutschen Kinderliedern als auch aus Klangexperimenten entwickelt, wobei musikalische Ideen entstehen, die ständig variiert werden und neue Elemente bilden. Zeitgenössische Konzepte des Klangelements, der Idee, der kontinuierlichen Variation, der Improvisation, der Kontraste, der Überlagerungen usw. werden in den Kreationen der Kinder intuitiv angewendet.\n\n Musik wird heute als ein Grundbedürfnis des Lebens angesehen. Wenn sie Teil der kindlichen Realität ist und von klein auf als pädagogisches Mittel eingesetzt wird, kann sie die Entwicklung der kognitiven, perzeptiven und expressiven Fähigkeiten des Kindes fördern, insbesondere in Bezug auf die Muttersprache, in der das Lesen als Mittel zum Wissenserwerb eine grundlegende Rolle spielt.")}
                         </Text>
                         <Image
-                            width='30rem'
+                            width={isSmallScreen ? '100%' : '30rem'}
                             src='/assets/konzept_2.JPG'
                             alt='konzept_2'
                             fallbackSrc='https://via.placeholder.com/512'
@@ -87,17 +84,16 @@ export default function KonzeptPage() {
                             position={'relative'}
                             objectFit='contain'
                             marginBottom={'2rem'}
-                            top={isSmallScreen ? '0rem' :'-5rem'}
+                            top={isSmallScreen ? '0rem' :'0rem'}
                         />
 
                     </Box>
                 </Flex>
             </Box>
             <Box backgroundColor={'#f5eee6'} padding='2rem' minW={'400px'} textColor={'black'} id="3">
-                <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'90%'} margin={'auto'}>
-                    <Box flexDir={'column'} alignItems={ 'center '} sx={{ display: 'flex', width: '100%' }} marginInline={'2rem'} className='light'>
+                <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'100%'} margin={'auto'}>
+                    <Box flexDir={'column'} alignItems={ 'center '} sx={{ display: 'flex'}} className='light'>
                         <Text
-                            paddingRight='3rem'
                             marginBottom={'2rem'}
                             marginTop={'2rem'}
                             fontSize={isSmallScreen ? '18' : '20'}
@@ -105,7 +101,7 @@ export default function KonzeptPage() {
                             {addLineBreak("Die musikalische Erziehung in Verbindung mit spielerischen Aktivitäten motiviert die spontane Teilnahme der kleinen Mäuse, die sich zusammen mit ihren Eltern, angezogen von Rhythmen und Melodien, leichter in die Gruppe integrieren und eine positive Einstellung zum Lernen entwickeln. \n\n Die Musikerziehung ist eine aktive Methode, die auf den Grundprinzipien der ganzheitlichen Erziehung, der Integration, des Fortschritts, der Freiheit und Kreativität sowie auf ihrem spielerischen, interdisziplinären und vielseitigen Charakter beruht. Ihre drei Grundpfeiler sind der Rhythmus, der in der Musik Ordnung und Proportion bedeutet, die Melodie, eine Kombination von Tönen, die eine musikalische Idee ausdrückt, und die Harmonie, die musikalische Struktur, die Rhythmus und Melodie unterstützt.")}
                         </Text>
                         <Image
-                            width='45rem'
+                            width={isSmallScreen ? '20rem' : '45rem'}
                             src='/assets/konzept_3.JPG'
                             alt='konzept_3'
                             fallbackSrc='https://via.placeholder.com/512'
@@ -115,7 +111,6 @@ export default function KonzeptPage() {
                             marginBottom={'2rem'}
                         />
                         <Text
-                            paddingRight='3rem'
                             marginBottom={'2rem'}
                             fontSize={isSmallScreen ? '18' : '20'}
                             className={oswald.className}>

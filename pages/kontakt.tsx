@@ -81,7 +81,7 @@ export default function KontaktPage() {
         error: error.message,
       }));
     }
-    window.location.href = '/danke';
+    window.location.href = '/danke_kontakt';
   }
 
   return (
