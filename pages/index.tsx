@@ -99,7 +99,10 @@ export default function HomePage() {
                 className={gochi.className}
                 fontSize='4xl'
                 textAlign={'left'}
-                sx={{ px: "0.5rem", marginTop: "1rem" }}
+                lineHeight={'1'}
+                marginBottom={'1rem'}
+                marginTop={'2rem'}
+                sx={{ px: "0.5rem", }}
               >
                 Die Musikkurse in Bochum
               </Text>

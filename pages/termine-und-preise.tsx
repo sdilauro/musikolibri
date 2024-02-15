@@ -11,22 +11,31 @@ export default function TermineUndPreisePage() {
     return (
         <>
             <Flex className="light" alignItems={isSmallScreen?'center':'self-start'} flexDir={isSmallScreen?'column':'row'}>
-                <KursCard
-                    name="Frühling"
+            <KursCard
+                    name="Eröffnung"
                     startOn="Februar"
                     finishOn="März"
                     price={60}
+                    imageSource="/assets/fireworks.png"
+                    details={["Gruppe I & II","5 Termine à 45 Min","Inkl. Texte"]}    
+                    id={"eroffnung"}
+                />
+                <KursCard
+                    name="Frühling"
+                    startOn="April"
+                    finishOn="Mai"
+                    price={72}
                     imageSource="/assets/fruhling.png"
-                    details={["Eröffnungsspezial","Gruppe I & II","5 Termine à 40 Min","Inkl. Texte"]}    
+                    details={["Gruppe I & II","6 Termine à 45 Min","Inkl. Texte"]}    
                     id={"fruhling"}
                 />
                 <KursCard
                     name="Sommer"
-                    startOn="April"
-                    finishOn="Juni"
-                    price={132}
+                    startOn="Juni"
+                    finishOn="Juli"
+                    price={60}
                     imageSource="/assets/sommer.png"
-                    details={["Gruppe I & II","11 Termine à 40 Min","Inkl. Texte"]}
+                    details={["Gruppe I & II","5 Termine à 45 Min","Inkl. Texte"]}
                     id={"sommer"}
                 />
             </Flex>
@@ -37,7 +46,7 @@ export default function TermineUndPreisePage() {
                     finishOn="Oktober"
                     price={96}
                     imageSource="/assets/herbst.png"
-                    details={["Gruppe I & II","8 Termine à 40 Min","Inkl. Texte"]}
+                    details={["Gruppe I & II","8 Termine à 45 Min","Inkl. Texte"]}
                     id={"herbst"}
                 />
                 <KursCard
@@ -46,7 +55,7 @@ export default function TermineUndPreisePage() {
                     finishOn="Dezember"
                     price={84}
                     imageSource="/assets/winter.png"
-                    details={["Gruppe I & II","7 Termine à 40 Min","Inkl. Texte"]}
+                    details={["Gruppe I & II","7 Termine à 45 Min","Inkl. Texte"]}
                     id={"winter"}
                 />
             </Flex>

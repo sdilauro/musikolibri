@@ -37,9 +37,9 @@ const KursCard = (props:KursCardProps) => {
                                 bgClip='text'> 
                                     {props.name} 
                                 </Text>
-                                <Text textColor={'black'}  fontSize={isSmallScreen?'18':'20'} className={oswald.className}>{props.startOn} / {props.finishOn}</Text>
+                                <Text textColor={'black'} textAlign={isSmallScreen?'center':'left'} fontSize={isSmallScreen?'18':'20'} className={oswald.className}>{props.startOn} / {props.finishOn}</Text>
                             </Flex>
-                            <Avatar name='Frühling' src={props.imageSource} size={'66'} />
+                            <Avatar name='Frühling' src={props.imageSource} size={'66px'} />
                         </Flex>
                         <Text textColor={'black'} fontSize={isSmallScreen?'24':'36'} className={oswald.className} textAlign={isSmallScreen?'center':'left'}>€{props.price}</Text>
                     </Box>

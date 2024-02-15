@@ -31,7 +31,10 @@ export default function KonzeptPage() {
                     className={gochi.className}
                     fontSize={isSmallScreen ? '4xl' : '5xl'}
                     align={'center'}
-                    marginTop='5rem'
+                    marginTop='6rem'
+                    marginBottom='1rem'
+                    marginInline={'2rem'}
+                    lineHeight={1}
                 >
                     Das pedagogische Konzept
                 </Text>
