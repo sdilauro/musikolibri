@@ -30,14 +30,16 @@ const GruppeItem = (props:GruppeItemProps) => {
 
 
     return (
-        <Box backgroundColor={props.color=='dark'?'#f4e4dc':'#f5eee6'} padding='2rem' minW={'400px'} textColor={'black'} id={props.id}>
+        <Box backgroundColor={props.color=='dark'?'#f4e4dc':'#f5eee6'} padding='2rem' textColor={'black'} id={props.id}>
             <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'1200'} width={'90%'} margin={'auto'}>
                 <Text 
-                    marginBottom={'-0.5rem'}
+                    marginBottom={'1rem'}
                     fontSize={isSmallScreen?'36':'48'} 
                     className={gochi.className} 
                     bgGradient='linear(to-l, #7A59CA, #E6175B)'
-                    bgClip='text'> 
+                    bgClip='text'
+                    noOfLines={2}
+                    lineHeight={1}> 
                     {props.name} 
                 </Text>
                 <Text 
