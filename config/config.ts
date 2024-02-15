@@ -6,7 +6,7 @@ export const navBarPages: Array<link> = [
     { name: 'Über mich', route: '/uber-mich' },
     { name: 'Konzept', route: '/konzept' },
     { name: 'Termine & Preise', route: '/termine-und-preise' },
-    { name: 'Kontakt', route: '/kontakt' }
+    { name: 'Kurslokal', route: '/kurslokal' }
 ]
 
 export const footerPages: Array<link> = [
