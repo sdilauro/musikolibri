@@ -31,7 +31,8 @@ export default function HomePage() {
               className={gochi.className}
               fontSize='5xl'
               align={'center'}
-              sx={{ marginBottom: "-2rem", marginTop: "3rem" }}
+              lineHeight={'1'}
+              sx={{ marginBottom: "0rem", marginTop: "3rem" }}
             >
               Gemeinsam muzisieren,
             </Text>
@@ -42,6 +43,8 @@ export default function HomePage() {
               className={gochi.className}
               fontSize='5xl'
               align={'center'}
+              lineHeight={'1'}
+              marginBottom={'0.5rem'}
             >
               gemeinsam wachsen
             </Text>

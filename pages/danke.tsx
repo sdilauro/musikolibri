@@ -1,7 +1,7 @@
 import { Box, Image, Text, useMediaQuery } from "@chakra-ui/react";
 import { Gochi_Hand } from 'next/font/google';
 import { maxWidth } from "../config/config";
-
+import React, { useEffect } from 'react';
 const gochi = Gochi_Hand({
     weight: '400',
     subsets: ['latin'],
@@ -18,6 +18,9 @@ const addLineBreak = (str: string) =>
   });
 
 export default function DankePage() {
+    useEffect(() => {
+        document.title = 'Danke! - Musikolibri Bochum';
+      }, []);
     const [isSmallScreen] = useMediaQuery(maxWidth);
     return (
         <Box sx={{ w: '100%' }} className='light'>
