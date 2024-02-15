@@ -64,7 +64,7 @@ export default function KonzeptPage() {
                     </Box>
                 </Flex>
             </Box>
-            <Box className="dark" padding='2rem' minW={'400px'} textColor={'black'} id="2">
+            <Box className="dark" padding='2rem' textColor={'black'} id="2">
                 <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'100%'} margin={'auto'}>
                     <Box flexDir={isSmallScreen ? 'column' : 'row'} alignItems={isSmallScreen ? 'center' : 'center '} sx={{ display: 'flex'}}  className='dark'>
                         <Text
@@ -90,7 +90,7 @@ export default function KonzeptPage() {
                     </Box>
                 </Flex>
             </Box>
-            <Box backgroundColor={'#f5eee6'} padding='2rem' minW={'400px'} textColor={'black'} id="3">
+            <Box backgroundColor={'#f5eee6'} padding='2rem' textColor={'black'} id="3">
                 <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'100%'} margin={'auto'}>
                     <Box flexDir={'column'} alignItems={ 'center '} sx={{ display: 'flex'}} className='light'>
                         <Text
