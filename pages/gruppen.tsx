@@ -38,7 +38,7 @@ export default function GruppePage() {
                 </Text>
 
             </Box>
-            <Box backgroundColor={'#f5eee6'} padding='2rem' minW={'400px'} textColor={'black'} id="1">
+            <Box backgroundColor={'#f5eee6'} padding='2rem' textColor={'black'} id="1">
                 <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'100%'} margin={'auto'}>
                     <Text
                         marginBottom={'-0.5rem'}
@@ -170,7 +170,7 @@ export default function GruppePage() {
                 </Flex>
 
             </Box>
-            <Box backgroundColor={'#f4e4dc'} padding='2rem' minW={'400px'} textColor={'black'} id="2">
+            <Box backgroundColor={'#f4e4dc'} padding='2rem' textColor={'black'} id="2">
                 <Flex flexDir='column' flex='1' alignItems='top' maxWidth={'900'} width={'100%'} margin={'auto'}>
                     <Text
                         marginBottom={'-0.5rem'}
