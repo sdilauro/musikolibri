@@ -50,7 +50,10 @@ export default function KonzeptPage() {
                     className={gochi.className}
                     fontSize={isSmallScreen ? '4xl' : '5xl'}
                     align={'center'}
-                    marginTop='5rem'
+                    marginTop='6rem'
+                    lineHeight={1}
+                    marginInline={'2rem'}
+                    paddingBottom= '2rem'
                 >
                     Kurslokal im Herzen von Bochum
                 </Text>

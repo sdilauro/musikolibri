@@ -44,7 +44,20 @@ function ResponsiveAppBar() {
                 </Link>
                 {navBarPages.map((item, index) => <Link className={oswald.className} style={{ textDecoration: 'none' }} key={index} href={item.route}>{item.name}</Link>)}
                 <Link style={{ textDecoration: 'none' }} href={'/anmeldung'}>
-                    <Button paddingX='2rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} fontSize={'24px'} className={gochi.className} fontWeight={400}>Anmeldung</Button>
+                    <Button
+                        paddingX='2rem'
+                        color={'white'}
+                        bgGradient='linear(to-l, #7A59CA, #E6175B)'
+                        borderRadius={'1.5rem'}
+                        h={'3rem'}
+                        fontSize={'24px'}
+                        className={gochi.className}
+                        fontWeight={400}
+                        _hover={{
+                            bgGradient: 'linear(to-r, #7A59CA, #7A59CA)',
+                          }}>
+                            Anmeldung
+                    </Button>
                 </Link>
         </Flex>
     </Flex>
@@ -63,8 +76,9 @@ function ResponsiveAppBar() {
                 </Link>
                 <IconButton
                     aria-label='Call Segun'
+                    backgroundColor={'#f5eee6'}
                     size='lg'
-                    color={'black'}
+                    color={'#E6175B'}
                     onClick={toggleMenu}
                     icon={hidden ? <HamburgerIcon /> : <CloseIcon />}
                     zIndex={1000}
@@ -79,7 +93,20 @@ function ResponsiveAppBar() {
                 }
                 <Flex p='1rem'>
                     <Link onClick={toggleMenu} style={{ textDecoration: 'none' }} href={'/anmeldung'}>
-                        <Button  paddingX='1rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} fontSize={'24px'} className={gochi.className} fontWeight={400}>Anmeldung</Button>
+                        <Button
+                        paddingX='1rem'
+                        color={'white'}
+                        bgGradient='linear(to-l, #7A59CA, #E6175B)'
+                        borderRadius={'1.5rem'}
+                        h={'3rem'}
+                        fontSize={'24px'}
+                        className={gochi.className}
+                        fontWeight={400}
+                        _hover={{
+                            bgGradient: 'linear(to-r, #7A59CA, #7A59CA)',
+                          }}>
+                                Anmeldung
+                            </Button>
                     </Link>
                 </Flex>
         </Flex>

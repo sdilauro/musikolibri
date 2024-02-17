@@ -7,16 +7,17 @@ import FormField from '../components/form-field';
 
 const initValues = {
   email: '',
-  name: '', 
-  vorname: '', 
+  name: '',
+  vorname: '',
   adresse: '',
   plz: '',
   ort: '',
   telefon: '',
-  kurse: '', 
+  kurse: '',
   child: '',
   geburtsdatum: '',
-  nachricht: '' }
+  nachricht: ''
+}
 const initState = { isLoading: false, error: '', values: initValues }
 
 const gochi = Gochi_Hand({
@@ -110,8 +111,8 @@ export default function AnmeldungFormPage() {
 
   return (
     <Box sx={{ w: '100%' }} className='light'>
-      <Container maxW="650px" mt={12}>
-        <Box sx={{ paddingY: '2rem', paddingBottom: '3rem', display: 'flex', flexDir: 'column' }}>
+      <Container maxW="650px" mt={12} minHeight="100vh">
+        <Box sx={{ paddingY: '1rem', paddingBottom: '3rem', display: 'flex', flexDir: 'column' }}>
           <Text
             noOfLines={2}
             bgGradient='linear(to-l, #7A59CA, #E6175B)'
@@ -131,27 +132,27 @@ export default function AnmeldungFormPage() {
           </Text>
         )}
 
-        <FormControl isRequired isInvalid={!values.kurse}  p={"0.5rem"}  >
-            <FormLabel>Kurs</FormLabel>
-            <Select
-              name="kurse"
-              value={values.kurse}
-              placeholder='Kurs auswählen'
-              onChange={handleChange}
-              id='kurseSelect'
-              bg='#f6f6f6'
-            >
-              {data.map((item: row, index: number) => (
-                <option color='#f6f6f6' value={index + 1} key={index} disabled={item.isFull} > {item.name}, {item.weekday} - {item.schedule} {item.isFull?' - Voller Kurs':''} </option>
-              ))
-              }
-            </Select>
-            <FormErrorMessage>Required</FormErrorMessage>
+        <FormControl isRequired isInvalid={!values.kurse} p={"0.5rem"}  >
+          <FormLabel>Kurs</FormLabel>
+          <Select
+            name="kurse"
+            value={values.kurse}
+            placeholder='Kurs auswählen'
+            onChange={handleChange}
+            id='kurseSelect'
+            bg='#f6f6f6'
+          >
+            {data.map((item: row, index: number) => (
+              <option color='#f6f6f6' value={index + 1} key={index} disabled={item.isFull} > {item.name}, {item.weekday} - {item.schedule} {item.isFull ? ' - Voller Kurs' : ''} </option>
+            ))
+            }
+          </Select>
+          <FormErrorMessage>Required</FormErrorMessage>
         </FormControl>
-        
+
         <Flex alignItems={isSmallScreen ? 'stretch' : 'self-start'} flexDir={isSmallScreen ? 'column' : 'row'}>
-          <FormField name='name' type='text' title='Name' isRequired value={values.name} onChange={handleChange}/>
-          <FormField name='vorname' type='text' title='Vorname' isRequired value={values.vorname} onChange={handleChange}/>
+          <FormField name='name' type='text' title='Name' isRequired value={values.name} onChange={handleChange} />
+          <FormField name='vorname' type='text' title='Vorname' isRequired value={values.vorname} onChange={handleChange} />
         </Flex>
 
         <Flex flexDir={isSmallScreen ? 'column' : 'row'}>
@@ -159,7 +160,7 @@ export default function AnmeldungFormPage() {
           <Flex flex={10}>
             <FormField name='plz' type='text' title='PLZ' isRequired value={values.plz} onChange={handleChange} />
             <FormField name='ort' type='text' title='Ort' isRequired value={values.ort} onChange={handleChange} />
-          </Flex>  
+          </Flex>
         </Flex>
 
         <Flex flexDir={isSmallScreen ? 'column' : 'row'} w={"100%"}>
@@ -171,52 +172,57 @@ export default function AnmeldungFormPage() {
           <FormField name='child' type='text' title='Vorname des Kindes' isRequired value={values.child} onChange={handleChange} />
           <FormField name='geburtsdatum' type='date' title='Geburtsdatum' isRequired value={values.geburtsdatum} onChange={handleChange} />
         </Flex>
-        
-        <FormControl sx={{ p:"0.5rem"}}>
+
+        <FormControl sx={{ p: "0.5rem" }}>
           <FormLabel>Hinterlasse deine Nachricht</FormLabel>
           <Textarea
             name='nachricht'
             value={values.nachricht}
             onChange={handleChange}
             bg='#f6f6f6'
-            
-            />
+
+          />
         </FormControl>
 
         <Flex justifyContent={'center'} alignItems={'center'} flexDir={isSmallScreen ? 'column' : 'row'} my={'2rem'}>
-            <Text
-              noOfLines={2}
-              bgGradient='linear(to-l, #7A59CA, #E6175B)'
-              bgClip='text'
-              className={gochi.className}
-              fontSize='4xl'
-              align={'center'}
-              mx={'1rem'}
-            >
-              Lass uns Musik machen!
-            </Text>
+          <Text
+            noOfLines={2}
+            bgGradient='linear(to-l, #7A59CA, #E6175B)'
+            bgClip='text'
+            className={gochi.className}
+            fontSize='4xl'
+            align={'center'}
+            mx={'1rem'}
+            lineHeight={1}
+            paddingBottom={isSmallScreen ? '1rem' : '0rem'}
+          >
+            Lass uns Musik machen!
+          </Text>
 
-            <Button
-              colorScheme='purple'
-              variant='solid'
-              borderRadius={"1.5rem"}
-              height={"3rem"}
-              width={"10rem"}
-              isLoading={isLoading}
-              className={gochi.className}
-              fontSize={'22px'}
-              fontWeight={400}
-              isDisabled={
-                !values.name || !values.email || !values.kurse || !values.child || !values.adresse || !values.geburtsdatum || !values.ort || !values.plz || !values.telefon || !values.vorname
-              }
-              onClick={onSubmit}
-              
-              mx={'5rem'}
-            >
+          <Button
+            paddingX='5rem'
+            color={'white'}
+            bgGradient='linear(to-l, #7A59CA, #E6175B)'
+            borderRadius={"1.5rem"}
+            height={"3rem"}
+            width={"10rem"}
+            isLoading={isLoading}
+            className={gochi.className}
+            fontSize={'22px'}
+            fontWeight={400}
+            isDisabled={
+              !values.name || !values.email || !values.kurse || !values.child || !values.adresse || !values.geburtsdatum || !values.ort || !values.plz || !values.telefon || !values.vorname
+            }
+            onClick={onSubmit}
+            _hover={{
+              bgGradient: 'linear(to-r, #7A59CA, #7A59CA)',
+            }}
+            mx={'5rem'}
+          >
             Absenden
-            </Button>
+          </Button>
 
-          </Flex>
+        </Flex>
       </Container>
     </Box>
   )

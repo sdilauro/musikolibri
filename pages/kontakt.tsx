@@ -128,21 +128,24 @@ export default function KontaktPage() {
         </FormControl>
 
         <Flex justifyContent={'center'} alignItems={'center'} flexDir={isSmallScreen ? 'column' : 'row'} my={'2rem'}>
-          <Text
-            noOfLines={2}
-            bgGradient='linear(to-l, #7A59CA, #E6175B)'
-            bgClip='text'
-            className={gochi.className}
-            fontSize='4xl'
-            align={'center'}
-            mx={'1rem'}
-          >
-            Lass uns Musik machen!
-          </Text>
+        <Text
+              noOfLines={2}
+              bgGradient='linear(to-l, #7A59CA, #E6175B)'
+              bgClip='text'
+              className={gochi.className}
+              fontSize='4xl'
+              align={'center'}
+              mx={'1rem'}
+              lineHeight={1}
+              paddingBottom={isSmallScreen ?'1rem' : '0rem'}
+            >
+              Lass uns Musik machen!
+            </Text>
 
           <Button
-            colorScheme='purple'
-            variant='solid'
+          paddingX='5rem'
+            color={'white'}
+            bgGradient='linear(to-l, #7A59CA, #E6175B)'
             borderRadius={"1.5rem"}
             height={"3rem"}
             width={"10rem"}
@@ -156,6 +159,9 @@ export default function KontaktPage() {
             onClick={onSubmit}
 
             mx={'5rem'}
+            _hover={{
+              bgGradient: 'linear(to-r, #7A59CA, #7A59CA)',
+            }}
           >
             Absenden
           </Button>

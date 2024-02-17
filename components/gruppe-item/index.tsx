@@ -54,7 +54,17 @@ const GruppeItem = (props:GruppeItemProps) => {
                     <Text mx={'3rem'} className={oswald.className} fontSize={isSmallScreen?'18':'24'} flex={1}>{props.days}</Text>
 
                     <Link style={{ textDecoration: 'none' }} href={`/anmeldung-form#${props.num}`}>
-                        <Button paddingX='2rem' colorScheme={'purple'} variant='solid' borderRadius={'1.5rem'} h={'3rem'} mx={'3rem'} my={'1rem'} isDisabled={props.isFull} >
+                        <Button
+                        paddingX='2rem'
+                        color={'white'}
+                        bgGradient='linear(to-l, #7A59CA, #E6175B)'
+                        borderRadius={'1.5rem'}
+                        h={'3rem'} mx={'3rem'}
+                        my={'1rem'}
+                        isDisabled={props.isFull}
+                        _hover={{
+                            bgGradient: 'linear(to-r, #7A59CA, #7A59CA)',
+                          }}>
                             <Text className={gochi.className} fontSize={isSmallScreen?'18':'24'}>{props.isFull?'Ausgebucht':'Auswählen'}</Text>    
                         </Button>
                     </Link>
