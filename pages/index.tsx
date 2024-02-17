@@ -85,7 +85,7 @@ export default function HomePage() {
               </Link>
               <Link style={{ textDecoration: 'none' }} href={'/anmeldung'}>
                 <Button
-                  paddingX='2rem'
+                  width={'12rem'}
                   color={'white'}
                   bgGradient='linear(to-l, #7A59CA, #E6175B)'
                   borderRadius={'1.5rem'}
