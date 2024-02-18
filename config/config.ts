@@ -11,7 +11,8 @@ export const navBarPages: Array<link> = [
 
 export const footerPages: Array<link> = [
     { name: 'Kontakt', route: '/kontakt' },
-    { name: 'Impressum', route: '/impressum' }
+    { name: 'Impressum', route: '/impressum' },
+    { name: 'AGB', route: '/agb' }
 ]
 
 export type kurses_file = { kurses: Array<kurse>, rows: Array<row> }

@@ -1,4 +1,4 @@
-import { Box, Button, Container, FormControl, FormErrorMessage, FormLabel, Heading, Input, Select, Text, useMediaQuery, useToast, Flex, FormHelperText, Spacer, Textarea, ThemeProvider, LightMode } from '@chakra-ui/react';
+import { Box, Button, Checkbox, Container, FormControl, FormErrorMessage, FormLabel, Link, Select, Text, useMediaQuery, useToast, Flex, FormHelperText, Spacer, Textarea, ThemeProvider, LightMode } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { sendAnmeldung, sendAnmeldungToAdmin } from '../lib/api';
 import { kurses_file, maxWidth, row } from "../config/config";
@@ -109,6 +109,12 @@ export default function AnmeldungFormPage() {
     window.location.href = '/danke';
   }
 
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
   return (
     <Box sx={{ w: '100%' }} className='light'>
       <Container maxW="650px" mt={12} minHeight="100vh">
@@ -184,6 +190,28 @@ export default function AnmeldungFormPage() {
           />
         </FormControl>
 
+        <Text paddingInline={'0.5rem'} marginTop={'1rem'}>
+          <Link color='#E6175B' href='/agb#widerruf' isExternal>
+            Hier
+          </Link> {' '}
+          finden Sie die Widerrufsbelehrung. (Link öffnet in neuem Tab)
+        </Text>
+
+        <FormControl isRequired sx={{ p: "0.5rem" }}>
+          <Checkbox
+            name='widerrufsbelehrung'
+            colorScheme='pink'
+            borderColor='#E6175B'
+            isChecked={isChecked}
+            onChange={handleCheckboxChange}
+          >
+            Die Widerrufsbelehrung habe ich gelesen und erkenne sie hiermit an. <Text as='span' color='red.500'>*</Text>
+
+          </Checkbox>
+        </FormControl>
+
+
+
         <Flex justifyContent={'center'} alignItems={'center'} flexDir={isSmallScreen ? 'column' : 'row'} my={'2rem'}>
           <Text
             noOfLines={2}
@@ -211,7 +239,7 @@ export default function AnmeldungFormPage() {
             fontSize={'22px'}
             fontWeight={400}
             isDisabled={
-              !values.name || !values.email || !values.kurse || !values.child || !values.adresse || !values.geburtsdatum || !values.ort || !values.plz || !values.telefon || !values.vorname
+              !values.name || !values.email || !values.kurse || !values.child || !values.adresse || !values.geburtsdatum || !values.ort || !values.plz || !values.telefon || !values.vorname || !isChecked
             }
             onClick={onSubmit}
             _hover={{
