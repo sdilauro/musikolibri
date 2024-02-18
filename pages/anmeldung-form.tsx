@@ -190,14 +190,7 @@ export default function AnmeldungFormPage() {
           />
         </FormControl>
 
-        <Text paddingInline={'0.5rem'} marginTop={'1rem'}>
-          <Link color='#E6175B' href='/agb#widerruf' isExternal>
-            Hier
-          </Link> {' '}
-          finden Sie die Widerrufsbelehrung. (Link öffnet in neuem Tab)
-        </Text>
-
-        <FormControl isRequired sx={{ p: "0.5rem" }}>
+        <FormControl isRequired sx={{ p: "0.5rem" }} marginTop={'1rem'}>
           <Checkbox
             name='widerrufsbelehrung'
             colorScheme='pink'
@@ -206,11 +199,15 @@ export default function AnmeldungFormPage() {
             onChange={handleCheckboxChange}
           >
             Die Widerrufsbelehrung habe ich gelesen und erkenne sie hiermit an. <Text as='span' color='red.500'>*</Text>
-
           </Checkbox>
         </FormControl>
 
-
+        <Text paddingInline={'0.5rem'} >
+          <Link color='#E6175B' href='/agb#widerruf' isExternal>
+            Hier
+          </Link> {' '}
+          finden Sie die Widerrufsbelehrung. (Link öffnet in neuem Tab)
+        </Text>
 
         <Flex justifyContent={'center'} alignItems={'center'} flexDir={isSmallScreen ? 'column' : 'row'} my={'2rem'}>
           <Text
