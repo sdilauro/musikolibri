@@ -60,7 +60,7 @@ export default function AGBPage() {
                         marginBottom={'2rem'}
                         fontSize={isSmallScreen ? '18' : '20'}
                         className={oswald.className}>
-                        `Die vorliegenden allgemeinen Geschäftsbedingungen enthalten die zwischen Ihnen (&apos;Teilnehmer&apos;) und mir, Anabela Chirizola, ausschließlich geltenden Bedingungen bei Vertragsabschlüssen bzw. Kontaktanfragen über meine Website musikolibri.de.
+                        Die vorliegenden allgemeinen Geschäftsbedingungen enthalten die zwischen Ihnen (&apos;Teilnehmer&apos;) und mir, Anabela Chirizola, ausschließlich geltenden Bedingungen bei Vertragsabschlüssen bzw. Kontaktanfragen über meine Website musikolibri.de.
                     </Text>
                     <Text
                         fontSize={isSmallScreen ? '24' : '36'}

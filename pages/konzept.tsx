@@ -18,7 +18,7 @@ const addLineBreak = (str: string) =>
 export default function KonzeptPage() {
     const [isSmallScreen] = useMediaQuery(maxWidth);
     useEffect(() => {
-        document.title = 'Das pedagogische Konzept - Musikolibri Bochum';
+        document.title = 'Das pädagogische Konzept - Musikolibri Bochum';
       }, []);
     return (
 
@@ -36,7 +36,7 @@ export default function KonzeptPage() {
                     marginInline={'2rem'}
                     lineHeight={1}
                 >
-                    Das pedagogische Konzept
+                    Das pädagogische Konzept
                 </Text>
             </Box>
             <Box backgroundColor={'#f5eee6'} padding='2rem'  textColor={'black'} id="1">
