@@ -60,7 +60,7 @@ export default function AGBPage() {
                         marginBottom={'2rem'}
                         fontSize={isSmallScreen ? '18' : '20'}
                         className={oswald.className}>
-                        Die vorliegenden allgemeinen Geschäftsbedingungen enthalten die zwischen Ihnen ('Teilnehmer') und mir, Anabela Chirizola, ausschließlich geltenden Bedingungen bei Vertragsabschlüssen bzw. Kontaktanfragen über meine Website musikolibri.de.
+                        `Die vorliegenden allgemeinen Geschäftsbedingungen enthalten die zwischen Ihnen (&apos;Teilnehmer&apos;) und mir, Anabela Chirizola, ausschließlich geltenden Bedingungen bei Vertragsabschlüssen bzw. Kontaktanfragen über meine Website musikolibri.de.
                     </Text>
                     <Text
                         fontSize={isSmallScreen ? '24' : '36'}
@@ -178,7 +178,7 @@ export default function AGBPage() {
                         paddingRight='3rem'
                         fontSize={isSmallScreen ? '18' : '20'}
                         className={oswald.className}>
-                        2. Der gewünschte Musikkurs wird im Anmeldeformular ausgewählt. Nach Eingabe Ihrer persönlichen Daten geben Sie durch Anklicken des Buttons ́"Absenden" eine verbindliche Anmeldung zu dem von Ihnen ausgewählten Kurs ab. Vor verbindlicher Abgabe der Anmeldung haben Sie die Möglichkeit, die Richtigkeit Ihrer Angaben zu überprüfen und gegebenenfalls zu korrigieren. Ich bestätige den Eingang der Anmeldung unmittelbar nach dem Absenden der Anmeldung durch eine automatische Anmeldebestätigungs-E-Mail. Diese E-Mail stellt jedoch noch keine verbindliche Zusage eines Platzes im Kurs dar, sondern dient lediglich Ihrer Information über die technisch einwandfreie Übermittlung der Anmeldung.
+                        2. Der gewünschte Musikkurs wird im Anmeldeformular ausgewählt. Nach Eingabe Ihrer persönlichen Daten geben Sie durch Anklicken des Buttons ́&apos;Absenden&apos; eine verbindliche Anmeldung zu dem von Ihnen ausgewählten Kurs ab. Vor verbindlicher Abgabe der Anmeldung haben Sie die Möglichkeit, die Richtigkeit Ihrer Angaben zu überprüfen und gegebenenfalls zu korrigieren. Ich bestätige den Eingang der Anmeldung unmittelbar nach dem Absenden der Anmeldung durch eine automatische Anmeldebestätigungs-E-Mail. Diese E-Mail stellt jedoch noch keine verbindliche Zusage eines Platzes im Kurs dar, sondern dient lediglich Ihrer Information über die technisch einwandfreie Übermittlung der Anmeldung.
                     </Text>
                     <Text
                         paddingRight='3rem'
